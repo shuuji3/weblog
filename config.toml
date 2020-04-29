@@ -15,11 +15,11 @@ GoogleAnalytics = "UA-7053288-5"
 [params]
   description = "Software Engineering"
   author = "TAKAHASHI Shuuji <shuuji3@gmail.com>"
-  keywords = ["hugo-now", "hugo"]
+  keywords = ["software-engineering"]
   avatar = "/images/icon-shuuji3.png"
   displayauthor = false
   # pygments
-  PygmentsUseClasses = false
+  PygmentsUseClasses = true
   PygmentsCodeFences = true
   PygmentsStyle = "pastie"
   # pagination
