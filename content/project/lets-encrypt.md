@@ -1,5 +1,5 @@
 ---
-title: "Google's Engineering Practices Documentation 日本語翻訳"
+title: "Let's Encrypt公式ウェブサイトのローカライズ"
 date: 2019-09-06T19:27:00+09:00
 tags: [translation]
 description: "Let's Encryptの公式ウェブサイトを日本語にローカライズしました。"
