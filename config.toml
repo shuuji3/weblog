@@ -1,0 +1,27 @@
+baseURL = "http://weblog.shuuji3.xyz/"
+languageCode = "ja-jp"
+title = "Weblog by shuuji3"
+# theme
+theme = "hugo-now"
+# Comment the themesDir option if you use this theme in production
+#themesDir = "../.."
+# google analytics
+GoogleAnalytics = "UA-7053288-5"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[params]
+  description = "Software Engineering"
+  author = "TAKAHASHI Shuuji <shuuji3@gmail.com>"
+  keywords = ["hugo-now", "hugo"]
+  avatar = "/images/icon-shuuji3.png"
+  displayauthor = false
+  # pygments
+  PygmentsUseClasses = false
+  PygmentsCodeFences = true
+  PygmentsStyle = "pastie"
+  # pagination
+  paginate = 10
+  paginatePath = "page"
