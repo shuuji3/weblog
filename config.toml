@@ -18,10 +18,13 @@ GoogleAnalytics = "UA-7053288-5"
   keywords = ["software-engineering"]
   avatar = "/images/icon-shuuji3.png"
   displayauthor = false
-  # pygments
-  PygmentsUseClasses = true
-  PygmentsCodeFences = true
-  PygmentsStyle = "pastie"
   # pagination
   paginate = 10
   paginatePath = "page"
+
+[markup]
+  [markup.highlight]
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = false
+    style = "pastie"
