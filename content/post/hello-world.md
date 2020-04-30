@@ -17,6 +17,8 @@ banner: [
 
 ## Golang code
 
+{{< github "ryansb/hugo-shortcodes" >}}
+
 ```go
 package main
 
