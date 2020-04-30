@@ -64,6 +64,8 @@ WindowsでChocolateyが使える環境では、次のコマンドでインスト
 > choco install mosh-for-chrome
 ```
 
+### Connect
+
 接続は簡単で、`ssh`の代わりに`mosh`コマンドを使うだけです。
 
 ```shell
