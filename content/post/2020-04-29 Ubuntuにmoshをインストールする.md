@@ -5,11 +5,9 @@ tags: [mosh]
 toc: true
 ---
 
-<!--more-->
-
-## Abstract
-
 Ubuntuにmoshをインストールして外部から`mosh`で接続できるようにします。
+
+<!--more-->
 
 ## Environment
 

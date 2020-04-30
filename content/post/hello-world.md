@@ -11,9 +11,9 @@ banner: [
 ]
 ---
 
-<!--more-->
-
 こんにちは、世界🌎
+
+<!--more-->
 
 ## Golang code
 
@@ -25,4 +25,15 @@ import "fmt"
 func main() {
     fmt.Println("こんにちは、世界🌎")
 }
+```
+
+## PythonGolang code
+
+```python
+def main() {
+    print("こんにちは、世界🌎")
+}
+
+if __name__ == '__main__':
+    main()
 ```

@@ -5,15 +5,13 @@ tags: [watching, google-kubernetes-engine, anthos]
 toc: true
 ---
 
+vmware上で動いているCentOS 4/5の古い仮想マシンをGKE上にマイグレーションする方法を説明している動画の視聴メモです。
+
 <!--more-->
 
 ## Source
 
 [Modernizing workloads with Migrate for Anthos - Google Cloud Platform ‐ YouTube](https://www.youtube.com/watch?v=7OgYaocQFwo&feature=em-uploademail&loop=0)
-
-## Abstract
-
-vmware上で動いているCentOS 4/5の古い仮想マシンをGKE上にマイグレーションする方法を説明している動画の視聴メモです。
 
 ## `migctl`と`kubectl`を使用したマイグレーションの実行
 
@@ -27,9 +25,9 @@ Anthosのマイグレーションの実行用に`migctl`というCLIがあるよ
 
 大まかな流れは把握できましたが、実行された各コマンドの詳しい説明がなかったので、それぞれのコマンドの役割は概要しか分かりませんでした。
 
-次のページでリファレンスが読めるので、実際に使うときにはここで詳細を確認できそうです。
+次のページでリファレンスが読めるので、実際に使うときにはここで詳細を確認するとよさそうです。
 
-migctl reference  |  Migrate for Anthos  |  Google Cloud - https://cloud.google.com/migrate/anthos/docs/migctl-reference
+[migctl reference  |  Migrate for Anthos  |  Google Cloud](https://cloud.google.com/migrate/anthos/docs/migctl-reference)
 
-他の人も同じことを考えていたようで、"Well explained, but can be more detailed"のようなコメントもありました。🙂
+他の人も同じことを考えていたようで、"Well explained, but can be more detailed"などのコメントがありました。🙂
 
