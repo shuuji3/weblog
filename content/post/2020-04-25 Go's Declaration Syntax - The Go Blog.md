@@ -39,7 +39,7 @@ Cの関数は伝統的には次のように宣言していました。
 ```c
 int main(argc, argv)
   int argc;
-	char *argv[];
+  char *argv[];
 { /* ... */ }
 ```
 
