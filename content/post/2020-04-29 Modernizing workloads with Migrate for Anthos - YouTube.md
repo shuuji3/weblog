@@ -11,7 +11,7 @@ vmware上で動いているCentOS 4/5の古い仮想マシンをGKE上にマイ�
 
 ## Source
 
-[Modernizing workloads with Migrate for Anthos - Google Cloud Platform ‐ YouTube](https://www.youtube.com/watch?v=7OgYaocQFwo&feature=em-uploademail&loop=0)
+{{< youtube 7OgYaocQFwo >}}
 
 ## `migctl`と`kubectl`を使用したマイグレーションの実行
 
