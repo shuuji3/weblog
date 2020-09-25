@@ -2,8 +2,12 @@
 title: lxcで作ったLinuxコンテナでデフォルトでssh接続できるようにする
 date: 2020-09-18T08:00:00+09:00
 tags: [lxc, cloud-init, ssh]
-toc: true
+toc: yes
+draft: yes
+slug: setup-linux-container-allowing-to-connect-with-ssh
 ---
+
+<!-- does not work! -->
 
 lxcでLinuxコンテナをつくったとき、デフォルトでは直接ssh接続することができません。GitHubのキーをインポートするcloud-initを利用することで、普段使用している公開鍵を使ってsshできるように設定することができます。
 

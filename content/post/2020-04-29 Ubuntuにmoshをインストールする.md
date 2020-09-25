@@ -2,7 +2,8 @@
 title: "Ubuntuにmoshをインストールする"
 date: 2020-04-29T18:00:00+09:00
 tags: [mosh]
-toc: true
+toc: yes
+slug: install-mosh-on-ubuntu
 ---
 
 Ubuntuにmoshをインストールして外部から`mosh`で接続できるようにします。

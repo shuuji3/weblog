@@ -2,7 +2,8 @@
 title: Kubernetesへの初めてのコントリビューション
 date: 2020-05-03T15:15:00+09:00
 tags: [kubernetes, hugo]
-toc: true
+toc: yes
+slug: first-contribution-to-kubernetes
 ---
 
 KubernetesのドキュメントにPull-Requestを送りました。
