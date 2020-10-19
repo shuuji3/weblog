@@ -1,5 +1,7 @@
 tasks:
-  - init: brew install hugo
+  - init: |
+      git submodule update --init --recursive
+      brew install hugo
     command: hugo server -D
 ports:
   - port: 1313
