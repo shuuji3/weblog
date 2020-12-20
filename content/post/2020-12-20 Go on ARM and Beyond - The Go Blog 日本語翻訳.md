@@ -1,6 +1,6 @@
 ---
 title: "Go on ARM and Beyond - The Go Blog 日本語翻訳"
-date: 2020-12-20T18:00:00+09:00
+date: 2020-12-20T17:30:00+09:00
 tags: [reading, golang]
 toc: yes
 slug: go-blog-ports
