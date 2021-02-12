@@ -133,7 +133,7 @@ class TaskList1  @Inject()(cc: ControllerComponents) extends AbstractController(
 }
 ```
 
-## 依存性の注入（Dependency Injection）
+### 依存性の注入（Dependency Injection）
 
 `@Singleton`は依存性注入のために必要なデコレーターらしいです。
 
@@ -141,7 +141,7 @@ class TaskList1  @Inject()(cc: ControllerComponents) extends AbstractController(
 
 Note: 私は[依存性の注入（DI）](https://ja.wikipedia.org/wiki/%E4%BE%9D%E5%AD%98%E6%80%A7%E3%81%AE%E6%B3%A8%E5%85%A5)を活用するフレームワークを使った経験がAngularで少し触れた程度しかないので、雰囲気が少しわかるという程度の理解しかありません。もっと学習が必要です。
 
-## Actionの定義とヘルパー関数`TODO`の活用
+### Actionの定義とヘルパー関数`TODO`の活用
 
 次に、Actionを定義します。Actionは、`router`でルートの3列目に定義されていた関数です。ここで、ルートからパラメータを受け取れます。
 
