@@ -68,3 +68,85 @@ Scalaの非同期ウェブサーバーのライブラリ[Akka HTTP](https://doc.
 - ブラウザで確認する
   - `public/`ディレクトリにある静的ファイルを表示します。
   - http://localhost:9000/assets/basicStuff.html を開くと、「This is a basic HTML file.」と表示されました。実際に、`public/basicStuff.html`がサーバーから配信されました！
+
+## Making Our First Page with Play using Scala
+
+{{< youtube YhOOnE4_KWA >}}
+
+### index viewの確認
+
+`index.scala.html`は次のように定義されています。
+
+```scala
+@(message: String)
+
+@main("Play with Scala.js") {
+<h2>Play and Scala.js share a same message</h2>
+
+<ul>
+  <li>Play shouts out: <em>@message</em></li>
+...
+}
+```
+
+viewの1行目はパラメータを指定しています。ここでは1つのStringを指定しています。
+
+テンプレート内では、`@message`のように、`@`プリフィックスを付けて変数を参照できます。普通のテンプレートエンジンです。
+
+面白いのは、`@main`です。これは、同じディレクトリにある以下のような`main.scala.html`にたいして、2つの引数を呼び出して展開しています。
+
+```scala
+@(title: String)(content: Html)
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>@title</title>
+...
+  <body>
+    @content
+...
+```
+
+1行目にパラメータが2つ定義されています。2つのパラメータを取るのではなく、カリー化を使用して2階の関数として定義されているのがユニークで面白いです。
+
+2つ目の引数には、`{}`で包んだHTMLが渡されていました。この構文は、Play Framefork内でHtml型のオプジェクトに変換する糖衣構文として実装されているような気がします。変数と同じように埋め込むと、有効なHTMLとして展開されるようです。面白いです。
+
+### 新しいコントローラーTaskList1の作成
+
+次のようなファイルを作成して、TaskList1というコントローラーを作成しました。
+
+```scala
+package controllers
+
+import javax.inject._
+
+import play.api.mvc._
+import play.api.i18n._
+
+@Singleton
+class TaskList1  @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
+  def taskList = Action {
+    Ok("This works!")
+  }
+}
+```
+
+## 依存性の注入（Dependency Injection）
+
+`@Singleton`は依存性注入のために必要なデコレーターらしいです。
+
+`javax.inject`ライブラリをimportして、インジェクションを行えるようにしています。`AbstractController`に`cc`を注入して、これを継承した`TaskList1`という新しいコントローラーを定義しています。
+
+Note: 私は[依存性の注入（DI）](https://ja.wikipedia.org/wiki/%E4%BE%9D%E5%AD%98%E6%80%A7%E3%81%AE%E6%B3%A8%E5%85%A5)を活用するフレームワークを使った経験がAngularで少し触れた程度しかないので、雰囲気が少しわかるという程度の理解しかなくてよくありません。
+
+## Actionの定義とヘルパー関数`TODO`の活用
+
+次に、Actionを定義します。Actionは、`router`でルートの3列目に定義されていた関数です。ここで、ルートからパラメータを受け取れます。
+
+`play.api.mvc.TODO`というヘルパー関数があり、実装前のActionの代わりに`def taskList = TODO`のように指定できます。こうすると、ページにアクセスしたときに未実装であることを示すTODOページが表示されます。便利です。
+
+`TODO`を`Action { Ok("This works!") }`で置き換えると、HTTP 200 OKのステータスを持ち、Bodyが文字列`This works!`であるようなHTTPレスポンスが返されます。
+
+次のビデオでは、単純な文字列だけでなく、viewを作成していきます。
