@@ -13,7 +13,7 @@ Mark Lewisさんは、スーパーコンピュータなどで天文学のシミ�
 
 <!--more-->
 
-## 1. Playlist Introduction
+## 01. Playlist Introduction
 
 {{< youtube FqMDHsFNlxQ >}}
 
@@ -31,7 +31,7 @@ Mark Lewisさんは、スーパーコンピュータなどで天文学のシミ�
 - Play Frameworkビルディングブロックとして、
 Scalaの非同期ウェブサーバーのライブラリ[Akka HTTP](https://doc.akka.io/docs/akka-http/current/index.html)を利用している。 
 
-## Structure of our Play Project
+## 02. Structure of our Play Project
 
 {{< youtube S_NE53AM2F4 >}}
 
@@ -69,7 +69,7 @@ Scalaの非同期ウェブサーバーのライブラリ[Akka HTTP](https://doc.
   - `public/`ディレクトリにある静的ファイルを表示します。
   - http://localhost:9000/assets/basicStuff.html を開くと、「This is a basic HTML file.」と表示されました。実際に、`public/basicStuff.html`がサーバーから配信されました！
 
-## Making Our First Page with Play using Scala
+## 03. Making Our First Page with Play using Scala
 
 {{< youtube YhOOnE4_KWA >}}
 
