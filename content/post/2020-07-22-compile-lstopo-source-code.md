@@ -3,7 +3,6 @@ title: lstopoをソースからコンパイルする
 date: 2020-07-22T23:30:00+09:00
 tags: [lstopo, make]
 toc: yes
-slug: compile-lstopo-source-code
 ---
 
 lstopoのソースコードをダウンロードしてコンパイルします。

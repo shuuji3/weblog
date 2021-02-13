@@ -4,7 +4,6 @@ date: 2020-09-18T08:00:00+09:00
 tags: [lxc, cloud-init, ssh]
 toc: yes
 draft: yes
-slug: setup-linux-container-allowing-to-connect-with-ssh
 ---
 
 <!-- does not work! -->

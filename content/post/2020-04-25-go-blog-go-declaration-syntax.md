@@ -3,7 +3,6 @@ title: "Go's Declaration Syntax - The Go Blog"
 date: 2020-04-29T18:00:00+09:00
 tags: [reading, golang]
 toc: yes
-slug: go-blog-go-declaration-syntax
 ---
 
 Go言語の構文のデザインについて説明している「Go's Declaration Syntax - The Go Blog」の読書メモです。

@@ -3,7 +3,6 @@ title: 「Dynamo and BigTable - Review and Comparison」論文 Readingメモ
 date: 2021-02-11T03:00:00+09:00
 tags: [paper-reading, dynamo, bigtable]
 toc: yes
-slug: dynamo-and-bigtable-review-and-comparison
 ---
 
 AWSのDynamoとGoogle CloudのBigtableの作者たちが書いた論文がそれぞれ存在します。この記事では、この2つの論文をもとにして両者の特性を比較した「Dynamo and BigTable - Review and comparison」という論文の内容を日本語で要約しています。

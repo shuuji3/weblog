@@ -3,7 +3,6 @@ title: "Modernizing workloads with Migrate for Anthos - Google Cloud Platform �
 date: 2020-04-29T17:00:00+09:00
 tags: [watching, google-kubernetes-engine, anthos]
 toc: yes
-slug: watch-modernizing-workloads-with-migrate-for-anthos-google-cloud-platform-youtube
 ---
 
 vmware上で動いているCentOS 4/5の古い仮想マシンをGKE上にマイグレーションする方法を説明している動画の視聴メモです。

@@ -3,7 +3,6 @@ title: "Go on ARM and Beyond - The Go Blog 日本語翻訳"
 date: 2020-12-20T17:30:00+09:00
 tags: [reading, golang]
 toc: yes
-slug: go-blog-ports
 ---
 
 [Go on ARM and Beyond - The Go Blog](https://blog.golang.org/ports)の翻訳です。元の記事のソースは[blog/ports.article at master · golang/blog](https://github.com/golang/blog/blob/master/content/ports.article)にあり、[Creative Commons — CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)で[ライセンス](https://golang.org/doc/copyright.html)されています。
