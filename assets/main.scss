@@ -1,3 +1,10 @@
+// Mobile breakpoints
+@mixin mobile {
+    @media screen and (max-width: 768px) {
+      @content;
+    }
+  }
+
 body {
     background-color: #fdedf2;
     font-family: Gilroy-Light, sans-serif !important;
@@ -60,6 +67,16 @@ code {
     padding: 1rem 1.5rem;
     max-width: 1000px;
     background-color: rgba(255, 255, 255, 0.5);
+    margin: 1rem auto;
+    border-radius: 1rem;
+
+    @include mobile {
+        border-radius: 0;
+    }
+}
+
+.masthead {
+    border-bottom: none;
 }
 
 .card {
@@ -69,4 +86,16 @@ code {
 .tags > .code {
     padding: 0.5rem;
     /*background-color: rgba(255, 255, 255, 0.75);*/
+}
+
+@include mobile {
+    nav a {
+        margin: 0 4px;
+    }
+}
+
+footer img {
+    max-height: 50px;
+    max-width: 200px;
+    margin: 0.5rem;
 }
