@@ -5,21 +5,19 @@ tags: [gitpod, hugo]
 toc: yes
 ---
 
-このブログは[Hugo](https://gohugo.io/)で構築されていますが、執筆は[Gitpod](https://www.gitpod.io/)上で行っています。この記事では、このブログのリポジトリで使用している`.gitpod.yml`ファイルについて説明します。`.gitpod.yml`を作成すると、Gitpodのワークスペースを開いたときの開発環境の構築を自動化できます。最終的には、Gitpodのワークスペースを開くだけで、Hugoでブログをビルドして、プレビューができる環境が用意されます。
+このブログは[Hugo](https://gohugo.io/)で構築されていますが、執筆は[Gitpod](https://www.gitpod.io/)上で行っています。この記事では、このブログのリポジトリで使用している`.gitpod.yml`ファイルについて説明します。`.gitpod.yml`を作成すると、Gitpodのワークスペースを開いたときの開発環境の構築を自動化できます。最終的に、Gitpodのワークスペースを開くだけで、Hugoでブログをビルドして、プレビューができる環境が用意されるようにします。
 
 <!--more-->
 
 ## Dockerデーモンの起動が完了を待機するシェルスクリプトを作る
 
-まずは、Dockerデーモンの起動が完了を待機するシェルスクリプトを作ります。これは、後に`tasks:`で必要になるものです。
+まずは、Dockerデーモンの起動が完了するのを待機するためのシェルスクリプトを作ります。これは、後に`tasks:`で必要になるものです。
 
-Gitpod上では、`sudo docker-up`コマンドを実行すると、[rootlessモード](https://docs.docker.com/engine/security/rootless/)でDockerデーモン（dockerd）が起動されます（2021-02-13時点では、Experimentalな機能）。その結果、Dockerのソケットが/var/run/docker.sockに作成されるため、DockerのCLIはこのソケットを使用してdockerdと通信できるようになります。rootlessモードでもこの点は変わりません。詳しくは、別の記事「[DockerのRootlessモードとGitpod](/post/2021-02-13-docker-rootless-mode-and-gitpod/)」を参照してください。
+Gitpod上では、`sudo docker-up`コマンドを実行すると、[rootlessモード](https://docs.docker.com/engine/security/rootless/)でDockerデーモン（`dockerd`）が起動されます（2021-02-13時点では、Experimentalな機能）。その結果、Dockerのソケットが`/var/run/docker.sock`に作成され、DockerのCLIはこのソケットを使用してdockerdと通信できるようになります。(rootlessモードについては、詳しくは、別の記事「[DockerのRootlessモードとGitpod](/post/2021-02-13-docker-rootless-mode-and-gitpod/)」を参照してください。)
 
-したがって、そのソケットとの疎通が確認できるコマンドを実行することで、dockerdが利用可能になったかどうかを判別できます。今回は、`docker info`の終了コードで判断することにします。
+したがって、Dockerのソケットとの疎通が確認できるコマンドを実行することで、dockerdが利用可能になったかどうかを判別できます。今回は、`docker info`の終了コードで判断することにします。`docker info`が失敗する場合と成功する場合で、終了コードはそれぞれ次のように`1`と`0`になります。
 
-ソケットとの接続が成功する場合と失敗する場合で、終了コードはそれぞれ次のように`0`と`1`になります。
-
-**失敗した場合**
+**失敗する場合**
 
 ```shell
 gitpod /workspace/weblog $ docker info; echo exit: $?
@@ -32,7 +30,7 @@ errors pretty printing info
 exit: 1
 ```
 
-**成功した場合**
+**成功する場合**
 
 ```shell
 gitpod /workspace/weblog $ docker info; echo exit: $?
@@ -51,7 +49,7 @@ Server:
 exit: 0
 ```
 
-よって、終了コードが0になるまでpollingすることで、dockerが利用できるまで待機することができます。
+よって、終了コードが0になるまでpollingすることで、Dockerが利用できるまで待機することができます。
 
 ```shell
 while [[ $(docker info > /dev/null; echo $?) != 0 ]]; do
@@ -81,7 +79,7 @@ tasks:
 
 ### `posts:`の定義
 
-`ports:`では、3000番ポートでサービスが公開されることを伝えています。`onOpen: open-browser`というオプションを指定すると、サービスが公開されたタイミングで、新しいタブが開き、プレビューが表示されます。
+`ports:`は、Gitpodに3000番ポートでサービスが公開されることを教えます。`onOpen: open-browser`というオプションを指定すると、サービスが公開されたタイミングで、新しいタブが開き、プレビューが表示されます。
 
 ### `tasks:`の定義
 
@@ -97,7 +95,7 @@ HugoのDockerコンテナを使って、`hugo`コマンドでブログをビル�
 
 2番目のシェルでは、`sudo docker-up`コマンドを実行します。これは、ユーザースペースでRootlessモードのDockerデーモンを起動してDocker CLIから利用できるように環境構築してくれるヘルパーコマンドです。`dockerd`が利用できるようになると、1番目のシェルは`while`ループから抜け出して、`docker run`でHugoコンテナを実行できるようになります。
 
-### `.gitpod.yml`で可能になったこと
+### まとめ: `.gitpod.yml`で可能になったこと
 
 この`.gitpod.yml`を作成したことで、Gitpodでリポジトリのワークスペースを開くだけで、以下のことが自動で行われるようになりました。
 
@@ -107,7 +105,9 @@ HugoのDockerコンテナを使って、`hugo`コマンドでブログをビル�
 
 ## 残されている課題
 
-`.gitpod.yml`とは関係ありませんが、現在、プレビューでテーマが正しく読み込まれていないため、CSSが正しく使われない問題があります。おそらくHugoを十分に理解していないときにこのリポジトリを作ったので、GitのSubmoduleやファイルの配置などに問題があるか、Dockerコンテナのマウント設定やHugoのオプションなどがどこか間違っているのではないかと思います。修正したいです。
+`.gitpod.yml`とは関係ありませんが、現在、プレビューでテーマが正しく読み込まれていないため、CSSが正しく使われない問題があります。おそらくHugoを十分に理解していないときにこのリポジトリを作ったので、GitのSubmoduleやファイルの配置などに問題があるか、Dockerコンテナのマウント設定やHugoのオプションなどがどこか間違っているのではないかと思います。
+
+また、リンクをクリックしてもホストのパスが違うため、手動でURLを書き換える必要があります。どちらも修正したいです。
 
 ## 参考文献
 
