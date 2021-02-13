@@ -23,7 +23,7 @@ Gitpodでは長い間、開発環境のユーザー環境で`docker`コマンド
 
 [Gitpod: Cloud Development Environments with Johannes Landgraf and Sven Efftinge - Software Engineering Daily](https://softwareengineeringdaily.com/2020/10/14/gitpod-cloud-development-environments-with-johannes-landgraf-and-sven-efftinge/)
 
-その後、Gitpodでは、この問題を解決するためにRootlessモードを利用することになり、一般に利用できるようになったことが、[2020年のクリスマスに発表されました](https://www.gitpod.io/blog/root-docker-and-vscode/)。Gitpod上では、`sudo docker-up`コマンドを実行すると、[rootlessモード](https://docs.docker.com/engine/security/rootless/)でDockerデーモン（dockerd）が起動されます。なお、2021-02-13時点では、Feature Previewなので、利用するにはオプションから有効にする必要があります。
+その後、Gitpodでは、この問題を解決するためにRootlessモードを利用することになり、一般に利用できるようになったことが、[2020年12月に発表されました](https://www.gitpod.io/blog/root-docker-and-vscode/)。Gitpod上では、`sudo docker-up`コマンドを実行すると、[rootlessモード](https://docs.docker.com/engine/security/rootless/)でDockerデーモン（dockerd）が起動されます。なお、2021-02-13時点では、Feature Previewなので、利用するにはオプションから有効にする必要があります。
 
 RootlessモードのDockerや、それを利用したGitpod内のしくみについては、次の動画で詳しく解説されています。
 
