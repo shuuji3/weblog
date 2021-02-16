@@ -3,6 +3,8 @@ title: ED25519のGPGキーを生成してコミットに署名する
 date: 2020-05-05T20:00:00+09:00
 tags: [gpg, git, github]
 toc: yes
+aliases:
+  - generate-and-sign-with-ed15519-gpg-key
 ---
 
 GnuPGでED25519のGPGキーを生成し、Gitのコミットに署名を行います。そして、GitHubに生成した鍵を登録することで、署名が検証されることを確認します。

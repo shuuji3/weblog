@@ -3,6 +3,8 @@ title: "CentOS 8でのファイアウォールの標準的な設定方法"
 date: 2021-02-12T13:40:00+09:00
 tags: [centos, firewall]
 toc: yes
+aliases:
+  - centos8-firewall-cmd
 ---
 
 CentOS 8では、iptablesではなく、firewalldを操作する`firewall-cmd`を利用してファイアウォールを設定するのが一般的です。この記事では、最も基本的な操作である、特定のサービスのポートを公開する方法について説明します。

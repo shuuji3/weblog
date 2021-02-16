@@ -3,6 +3,8 @@ title: GitpodにおけるDockerのRootlessモードの活用
 date: 2021-02-13T18:30:00+09:00
 tags: [gitpod, docker, rootless]
 toc: yes
+aliases:
+  - docker-rootless-mode-and-gitpod
 ---
 
 この記事では、DockerのRootlessモードと、Gitpodでの活用について説明します。

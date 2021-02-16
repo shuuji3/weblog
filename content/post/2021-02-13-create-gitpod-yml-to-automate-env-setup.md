@@ -3,6 +3,8 @@ title: Gitpod上でHugoのサイトの環境構築を自動化する
 date: 2021-02-13T17:30:00+09:00
 tags: [gitpod, hugo]
 toc: yes
+aliases:
+  - create-gitpod-yml-to-automate-env-setup
 ---
 
 このブログは[Hugo](https://gohugo.io/)で構築されていますが、執筆は[Gitpod](https://www.gitpod.io/)上で行っています。この記事では、このブログのリポジトリで使用している`.gitpod.yml`ファイルについて説明します。`.gitpod.yml`を作成すると、Gitpodのワークスペースを開いたときの開発環境の構築を自動化できます。最終的に、Gitpodのワークスペースを開くだけで、Hugoでブログをビルドして、プレビューができる環境が用意されるようにします。

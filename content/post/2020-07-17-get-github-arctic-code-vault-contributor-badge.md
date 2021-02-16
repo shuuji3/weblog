@@ -3,6 +3,8 @@ title: GitHub Arctic Code Vault Contributorバッジが付いた
 date: 2020-07-18T12:00:00+09:00
 tags: [github]
 toc: yes
+aliases:
+  - get-github-arctic-code-vault-contributor-badge
 ---
 
 GitHub Arctic Code Vault Contributorバッジが付きました。嬉しいです。

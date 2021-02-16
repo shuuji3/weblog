@@ -3,6 +3,8 @@ title: Play Framework using Scala
 date: 2021-02-12T23:30:00+09:00
 tags: [scala, play-framework, watching]
 toc: yes
+aliases:
+  - play-framework-using-scala
 ---
 
 この記事では、テキサスのTrynity Universityの教授Mark C. LewisさんがYouTubeで公開している「Play Framework using Scala」をハンズオンで進めながら、やったことや理解したことなどをメモしています。

@@ -3,6 +3,8 @@ title: MicroK8sでcluster-admin Roleを使えるようにする
 date: 2020-09-26T10:00:00+09:00
 tags: [kubernetes, microk8s, clusterrole]
 toc: yes
+aliases:
+  - enable-cluster-admin-role-on-microk8s
 ---
 
 この記事では、MicroK8s上で`cluster-admin`のClusterRoleを利用できるようにする方法を説明します。
