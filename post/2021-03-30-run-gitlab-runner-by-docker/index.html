@@ -13,14 +13,14 @@
 </span><span class=se></span>    --docker-volumes /builds:/builds <span class=se>\
 </span><span class=se></span>    --docker-image gcr.io/buildpacks/builder <span class=se>\
 </span><span class=se></span>    --docker-privileged
-</code></pre></div><ul><li><code>&lt;registration-token></code> には、上でメモしたトークンを書きます。</li><li><code>&lt;node-name></code> には、ノード名を書きます。例: pi-0</li><li><code>&lt;cluster-name></code> には、クラスター名を書きます。例: pi</li><li><code>&lt;os-name></code> には、OS名を書きます。例: ubuntu、centos</li><li><code>&lt;os-version></code> には、OSのバージョンを書きます。例: 20.04</li><li>これらの値は 管理者エリア - GitLab（<a href=https://git.your.domain/admin/runners>https://git.your.domain/admin/runners</a>）に表示されるので分かりやすいように付けてください。<ul><li><code>--docker-image gcr.io/buildpacks/builder</code>は、設定がない場合のデフォルトのビルドイメージを指定しています。これはGoogle Cloud Runで使用されているビルドバックで、標準のアプリの自動ビルドを可能にします。</li><li><code>--docker-privileged</code>により、コンテナがprivilegedモードで実行可能になります。これは、systemdの実行が必要なコンテナなど、Docker in Dockerを実行するために必要です。特権コンテナが不要・使えない場合は省略できます。</li></ul></li><li>registrationが成功すると、次のような設定ファイルが<code>/etc/gitlab-runner/config.toml</code>に生成されます。確認してください。</li></ul><div class=highlight><pre class=chroma><code class=language-toml data-lang=toml><span class=nx>concurrent</span> <span class=p>=</span> <span class=mi>1</span>
+</code></pre></div><ul><li><code>&lt;registration-token></code> には、上でメモしたトークンを書きます。</li><li><code>&lt;node-name></code> には、ノード名を書きます。例: pi-0</li><li><code>&lt;cluster-name></code> には、クラスター名を書きます。例: pi</li><li><code>&lt;os-name></code> には、OS名を書きます。例: ubuntu、centos</li><li><code>&lt;os-version></code> には、OSのバージョンを書きます。例: 20.04</li><li>これらの値は 管理者エリア - GitLab（<a href=https://git.your.domain/admin/runners>https://git.your.domain/admin/runners</a>）に表示されるので分かりやすいように付けてください。</li><li><code>--docker-image gcr.io/buildpacks/builder</code>は、設定がない場合のデフォルトのビルドイメージを指定しています。これはGoogle Cloud Runで使用されているビルドバックで、標準のアプリの自動ビルドを可能にします。</li><li><code>--docker-privileged</code>により、コンテナがprivilegedモードで実行可能になります。これは、systemdの実行が必要なコンテナなど、Docker in Dockerを実行するために必要です。特権コンテナが不要・使えない場合は省略できます。</li><li>registrationが成功すると、次のような設定ファイルが<code>/etc/gitlab-runner/config.toml</code>に生成されます。確認してください。</li></ul><div class=highlight><pre class=chroma><code class=language-toml data-lang=toml><span class=nx>concurrent</span> <span class=p>=</span> <span class=mi>1</span>
 <span class=nx>check_interval</span> <span class=p>=</span> <span class=mi>0</span>
 
 <span class=p>[</span><span class=nx>session_server</span><span class=p>]</span>
   <span class=nx>session_timeout</span> <span class=p>=</span> <span class=mi>1800</span>
 
   <span class=p>[[</span><span class=nx>runners</span><span class=p>]]</span>
-  <span class=nx>name</span> <span class=p>=</span> <span class=s2>&#34;les10&#34;</span>
+  <span class=nx>name</span> <span class=p>=</span> <span class=s2>&#34;pi-0&#34;</span>
   <span class=nx>url</span> <span class=p>=</span> <span class=s2>&#34;https://git.your.domain&#34;</span>
   <span class=nx>token</span> <span class=p>=</span> <span class=s2>&#34;&lt;registration-token&gt;&#34;</span>
   <span class=nx>executor</span> <span class=p>=</span> <span class=s2>&#34;docker&#34;</span>
