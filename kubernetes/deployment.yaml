@@ -1,0 +1,43 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: weblog
+  name: weblog
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: weblog
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: weblog
+    spec:
+      containers:
+        - image: gcr.io/shuuji3/github.com/shuuji3/weblog
+          imagePullPolicy: IfNotPresent
+          name: weblog-1
+          resources:
+            limits:
+              cpu: 100m
+              ephemeral-storage: 100Mi
+              memory: 100Mi
+            requests:
+              cpu: 100m
+              ephemeral-storage: 100Mi
+              memory: 100Mi
+          securityContext:
+            capabilities:
+              drop:
+                - NET_RAW
+      securityContext:
+        seccompProfile:
+          type: RuntimeDefault
