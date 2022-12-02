@@ -15,6 +15,6 @@ This string `2022-12-03-refs-heads-feature-branch-1-1234abc` can be divided into
 
 The date can be created from `date` command. The reference name can be created from `GITHUB_REF` (like `refs/heads/feature-branch-1`). The commit hash can be created from `GITHUB_SHA` (like `ffac537e6cbbf934b08745a378932722df287a53`). 
 
-The `date` should be OK, but other environment variables contains illegal characters for the filename or too long. In the normal GitHub Workflow environment (Ubuntu VM?), it looks like we can use a bash's feature called [Shell Parameter Expansion (Bash Reference Manual)](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html).
+The `date` should be OK, but other environment variables contains illegal characters for the filename or just too long. The normal `run:` command seems to be run on bash in the standard environment (Ubuntu VM?) so we can use a bash's feature called [Shell Parameter Expansion (Bash Reference Manual)](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html).
 
 To make the desired string `2022-12-03-refs-heads-feature-branch-1-1234abc`, we can use the  expression like this: `$(date +%Y-%m-%d)-${GITHUB_REF////-}-${GITHUB_SHA::7}`. The `${VARIABLE//A/B}` means to replace `A` with `B` in `VARIABLE` and the `${VARIABLE:0:7}` means to substring `VARIABLE` from position 0 (which can be omitted) to position 7.
