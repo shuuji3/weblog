@@ -1,0 +1,17 @@
+{{ partial "header" . }}
+{{ partial "nav" . }}
+<div class="container">
+  <section class="section">
+    <article class="article">
+      {{ partial "post-metadata-single" . }}
+      <div class="content">
+        {{ partial "banner" . }}
+        {{ partial "table-of-contents" . }}
+        <!-- supports emoji -->
+        {{ .Content | emojify }}
+      </div>
+    </article>
+  </section>
+</div>
+{{ partial "paginate-single" . }}
+{{ partial "footer" . }}
