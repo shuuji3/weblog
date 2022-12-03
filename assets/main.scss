@@ -46,6 +46,10 @@ a.code {
     text-decoration: underline;
 }
 
+a:focus {
+    outline: solid 3px #ffc107;
+}
+
 strong {
     font-family: Gilroy-ExtraBold, sans-serif;
 }
