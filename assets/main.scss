@@ -50,6 +50,11 @@ a:focus {
     outline: solid 3px #ffc107;
 }
 
+::selection {
+    color: inherit;
+    background: #ffc107;
+}
+
 strong {
     font-family: Gilroy-ExtraBold, sans-serif;
 }
