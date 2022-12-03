@@ -2,7 +2,7 @@
 
 post:
 	@read -p 'What is the article title? (e.g. hello-world) > ' title; \
-	hugo new post/$(shell date +%Y-%m-%d)-$$title.md
+	hugo new post/$(shell date +%Y-%m-%d)-$$title.md; \
 	idea content/post/$(shell date +%Y-%m-%d)-$$title.md
 
 serve:
