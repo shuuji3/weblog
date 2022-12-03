@@ -102,6 +102,10 @@ p code {
     /*background-color: rgba(255, 255, 255, 0.75);*/
 }
 
+li {
+    margin-bottom: 0.5em;
+}
+
 @include mobile {
     nav a {
         margin: 0 4px;
