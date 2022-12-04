@@ -1,5 +1,5 @@
 ---
-title: ED25519のGPGキーを生成してコミットに署名する
+title: macOSでEd25519のGPGキーを生成してコミットに署名する
 date: 2020-05-05T20:00:00+09:00
 tags: [gpg, git, github]
 toc: yes
@@ -7,59 +7,66 @@ aliases:
   - generate-and-sign-with-ed15519-gpg-key
 ---
 
-GnuPGでED25519のGPGキーを生成し、Gitのコミットに署名を行います。そして、GitHubに生成した鍵を登録することで、署名が検証されることを確認します。
+macOSでGnuPGでEd25519のGPGキーを生成し、Gitのコミットに署名を行います。そして、GitHubに生成した鍵を登録することで、署名が検証されることを確認します。
 
 <!--more-->
 
-## Generate key
+Updated: 2022-12-04
 
-まずは鍵を生成します。
+## Check GPG version
+
+Homebrewでインストールしたgpg (GnuPG) 2.3.8を使用します。
 
 ```shell
-> gpg --expert --full-gen-key
-gpg (GnuPG) 2.2.20; Copyright (C) 2020 Free Software Foundation, Inc.
+gpg --version
+gpg (GnuPG) 2.3.8
+libgcrypt 1.10.1
+Copyright (C) 2021 Free Software Foundation, Inc.
+License GNU GPL-3.0-or-later <https://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Home: /Users/shuuji3/.gnupg
+Supported algorithms:
+Pubkey: RSA, ELG, DSA, ECDH, ECDSA, EDDSA
+Cipher: IDEA, 3DES, CAST5, BLOWFISH, AES, AES192, AES256, TWOFISH,
+        CAMELLIA128, CAMELLIA192, CAMELLIA256
+AEAD: EAX, OCB
+Hash: SHA1, RIPEMD160, SHA256, SHA384, SHA512, SHA224
+Compression: Uncompressed, ZIP, ZLIB, BZIP2
+```
+
+## Generate key
+
+まずは鍵を生成します。GPG>=2.1.17 では、従来の `--gen-key` の代わりに `--full-generate-key` で作成します。
+
+```shell
+> gpg --full-generate-key
+gpg (GnuPG) 2.3.8; Copyright (C) 2021 Free Software Foundation, Inc.
 This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
 
 Please select what kind of key you want:
-   (1) RSA and RSA (default)
+   (1) RSA and RSA
    (2) DSA and Elgamal
    (3) DSA (sign only)
    (4) RSA (sign only)
-   (7) DSA (set your own capabilities)
-   (8) RSA (set your own capabilities)
-   (9) ECC and ECC
+   (9) ECC (sign and encrypt) *default*
   (10) ECC (sign only)
-  (11) ECC (set your own capabilities)
-  (13) Existing key
   (14) Existing key from card
-Your selection? 11
-
-Possible actions for a ECDSA/EdDSA key: Sign Certify Authenticate
-Current allowed actions: Sign Certify
-
-   (S) Toggle the sign capability
-   (A) Toggle the authenticate capability
-   (Q) Finished
-
-Your selection?
+Your selection? 
 Please select which elliptic curve you want:
-   (1) Curve 25519
-   (3) NIST P-256
+   (1) Curve 25519 *default*
    (4) NIST P-384
-   (5) NIST P-521
    (6) Brainpool P-256
-   (7) Brainpool P-384
-   (8) Brainpool P-512
-   (9) secp256k1
-Your selection? 1
+Your selection? 
 Please specify how long the key should be valid.
          0 = key does not expire
       <n>  = key expires in n days
       <n>w = key expires in n weeks
       <n>m = key expires in n months
       <n>y = key expires in n years
-Key is valid for? (0)
+Key is valid for? (0) 
 Key does not expire at all
 Is this correct? (y/N) y
 
@@ -67,7 +74,7 @@ GnuPG needs to construct a user ID to identify your key.
 
 Real name: TAKAHASHI Shuuji
 Email address: shuuji3@gmail.com
-Comment:
+Comment: 
 You selected this USER-ID:
     "TAKAHASHI Shuuji <shuuji3@gmail.com>"
 
@@ -76,178 +83,31 @@ We need to generate a lot of random bytes. It is a good idea to perform
 some other action (type on the keyboard, move the mouse, utilize the
 disks) during the prime generation; this gives the random number
 generator a better chance to gain enough entropy.
-gpg: key FC8A43AFCFBCC836 marked as ultimately trusted
-gpg: revocation certificate stored as '/Users/shuuji/.gnupg/openpgp-revocs.d/21CD54006A9FD72AAB25DC82FC8A43AFCFBCC836.rev'
+We need to generate a lot of random bytes. It is a good idea to perform
+some other action (type on the keyboard, move the mouse, utilize the
+disks) during the prime generation; this gives the random number
+generator a better chance to gain enough entropy.
+gpg: revocation certificate stored as '/Users/shuuji3/.gnupg/openpgp-revocs.d/8291C416B80C0D07B3EC35B3F15C887632129F5E.rev'
 public and secret key created and signed.
 
-pub   ed25519 2020-05-05 [SC]
-      21CD54006A9FD72AAB25DC82FC8A43AFCFBCC836
+pub   ed25519 2022-12-04 [SC]
+      8291C416B80C0D07B3EC35B3F15C887632129F5E
 uid                      TAKAHASHI Shuuji <shuuji3@gmail.com>
+sub   cv25519 2022-12-04 [E]
 ```
 
-## Add subkeys
+## Confirm key generation
 
-生成した鍵に対して、署名用と認証用の2つのサブキーを追加します。生成された鍵の指紋`21CD54006A9FD72AAB25DC82FC8A43AFCFBCC836`を指定して、`--edit-key`を行います。
-
-```shell
-> gpg --expert --edit-key 21CD54006A9FD72AAB25DC82FC8A43AFCFBCC836
-gpg (GnuPG) 2.2.20; Copyright (C) 2020 Free Software Foundation, Inc.
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.
-
-Secret key is available.
-
-sec  ed25519/FC8A43AFCFBCC836
-     created: 2020-05-05  expires: never       usage: SC
-     trust: ultimate      validity: ultimate
-[ultimate] (1). TAKAHASHI Shuuji <shuuji3@gmail.com>
-
-gpg> addkey
-Please select what kind of key you want:
-   (3) DSA (sign only)
-   (4) RSA (sign only)
-   (5) Elgamal (encrypt only)
-   (6) RSA (encrypt only)
-   (7) DSA (set your own capabilities)
-   (8) RSA (set your own capabilities)
-  (10) ECC (sign only)
-  (11) ECC (set your own capabilities)
-  (12) ECC (encrypt only)
-  (13) Existing key
-  (14) Existing key from card
-Your selection? 11
-
-Possible actions for a ECDSA/EdDSA key: Sign Authenticate
-Current allowed actions: Sign
-
-   (S) Toggle the sign capability
-   (A) Toggle the authenticate capability
-   (Q) Finished
-
-Your selection?
-Please select which elliptic curve you want:
-   (1) Curve 25519
-   (3) NIST P-256
-   (4) NIST P-384
-   (5) NIST P-521
-   (6) Brainpool P-256
-   (7) Brainpool P-384
-   (8) Brainpool P-512
-   (9) secp256k1
-Your selection? 1
-Please specify how long the key should be valid.
-         0 = key does not expire
-      <n>  = key expires in n days
-      <n>w = key expires in n weeks
-      <n>m = key expires in n months
-      <n>y = key expires in n years
-Key is valid for? (0)
-Key does not expire at all
-Is this correct? (y/N) y
-Really create? (y/N) y
-We need to generate a lot of random bytes. It is a good idea to perform
-some other action (type on the keyboard, move the mouse, utilize the
-disks) during the prime generation; this gives the random number
-generator a better chance to gain enough entropy.
-
-sec  ed25519/FC8A43AFCFBCC836
-     created: 2020-05-05  expires: never       usage: SC
-     trust: ultimate      validity: ultimate
-ssb  ed25519/6FA31977C6C288BB
-     created: 2020-05-05  expires: never       usage: S
-[ultimate] (1). TAKAHASHI Shuuji <shuuji3@gmail.com>
-
-gpg> addkey
-Please select what kind of key you want:
-   (3) DSA (sign only)
-   (4) RSA (sign only)
-   (5) Elgamal (encrypt only)
-   (6) RSA (encrypt only)
-   (7) DSA (set your own capabilities)
-   (8) RSA (set your own capabilities)
-  (10) ECC (sign only)
-  (11) ECC (set your own capabilities)
-  (12) ECC (encrypt only)
-  (13) Existing key
-  (14) Existing key from card
-Your selection? 11
-
-Possible actions for a ECDSA/EdDSA key: Sign Authenticate
-Current allowed actions: Sign
-
-   (S) Toggle the sign capability
-   (A) Toggle the authenticate capability
-   (Q) Finished
-
-Your selection? s
-
-Possible actions for a ECDSA/EdDSA key: Sign Authenticate
-Current allowed actions:
-
-   (S) Toggle the sign capability
-   (A) Toggle the authenticate capability
-   (Q) Finished
-
-Your selection? a
-
-Possible actions for a ECDSA/EdDSA key: Sign Authenticate
-Current allowed actions: Authenticate
-
-   (S) Toggle the sign capability
-   (A) Toggle the authenticate capability
-   (Q) Finished
-
-Your selection? q
-Please select which elliptic curve you want:
-   (1) Curve 25519
-   (3) NIST P-256
-   (4) NIST P-384
-   (5) NIST P-521
-   (6) Brainpool P-256
-   (7) Brainpool P-384
-   (8) Brainpool P-512
-   (9) secp256k1
-Your selection? q
-Invalid selection.
-Your selection? 1
-Please specify how long the key should be valid.
-         0 = key does not expire
-      <n>  = key expires in n days
-      <n>w = key expires in n weeks
-      <n>m = key expires in n months
-      <n>y = key expires in n years
-Key is valid for? (0)
-Key does not expire at all
-Is this correct? (y/N) y
-Really create? (y/N) y
-We need to generate a lot of random bytes. It is a good idea to perform
-some other action (type on the keyboard, move the mouse, utilize the
-disks) during the prime generation; this gives the random number
-generator a better chance to gain enough entropy.
-
-sec  ed25519/FC8A43AFCFBCC836
-     created: 2020-05-05  expires: never       usage: SC
-     trust: ultimate      validity: ultimate
-ssb  ed25519/6FA31977C6C288BB
-     created: 2020-05-05  expires: never       usage: S
-ssb  ed25519/D1FB45BFF487ED4C
-     created: 2020-05-05  expires: never       usage: A
-[ultimate] (1). TAKAHASHI Shuuji <shuuji3@gmail.com>
-
-gpg> save
-```
-
-最後に`save`コマンドで保存しないと、結果が失われてしまうので注意します。サブキーが登録されたことを確認します。
+GPGキーが登録されたことを確認します。
 
 ```shell
 > gpg --list-secret-keys --keyid-format LONG
-/Users/shuuji/.gnupg/pubring.kbx
---------------------------------
-sec   ed25519/FC8A43AFCFBCC836 2020-05-05 [SC]
-      21CD54006A9FD72AAB25DC82FC8A43AFCFBCC836
+/Users/shuuji3/.gnupg/pubring.kbx
+---------------------------------
+sec   ed25519/F15C887632129F5E 2022-12-04 [SC]
+      8291C416B80C0D07B3EC35B3F15C887632129F5E
 uid                 [ultimate] TAKAHASHI Shuuji <shuuji3@gmail.com>
-ssb   ed25519/6FA31977C6C288BB 2020-05-05 [S]
-ssb   ed25519/D1FB45BFF487ED4C 2020-05-05 [A]
+ssb   cv25519/427EF0BB512D5D98 2022-12-04 [E]
 ```
 
 ## Export public key to GitHub
@@ -257,7 +117,7 @@ GitHubでCommitの署名をVerifyしてもらうためには、公開鍵をexpor
 まず、鍵をexportします。
 
 ```shell
-> gpg --export --armor 21CD54006A9FD72AAB25DC82FC8A43AFCFBCC836
+> gpg --export --armor 8291C416B80C0D07B3EC35B3F15C887632129F5E
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
 (...)
@@ -273,7 +133,7 @@ GitHubの設定画面の[SSH and GPG keys](https://github.com/settings/keys)の�
 コミットに署名するようにgitを設定します。
 
 ```shell
-git config --global user.signingkey 21CD54006A9FD72AAB25DC82FC8A43AFCFBCC836
+git config --global user.signingkey 8291C416B80C0D07B3EC35B3F15C887632129F5E
 git config --global commit.gpgsign true
 git config --global gpg.program gpg
 ```
@@ -282,7 +142,7 @@ gitの設定を確認します。
 
 ```shell
 > git config --global -l | egrep '(key|gpg)'
-user.signingkey=21CD54006A9FD72AAB25DC82FC8A43AFCFBCC836
+user.signingkey=8291C416B80C0D07B3EC35B3F15C887632129F5E
 commit.gpgsign=true
 gpg.program=gpg
 ```
@@ -301,14 +161,14 @@ gpg.program=gpg
 
 ```shell script
 > git log --show-signature
-commit 9c8a8a64d94c665b6da962cfba6194ea36f355f9 (HEAD -> master, origin/master)
-gpg: Signature made 火  5/ 5 19:34:33 2020 JST
-gpg:                using EDDSA key 21CD54006A9FD72AAB25DC82FC8A43AFCFBCC836
+commit e8aa843140456405031ffdfe56c60912f32f9579
+gpg: Signature made 日 12/ 4 16:32:30 2022 JST
+gpg:                using EDDSA key 8291C416B80C0D07B3EC35B3F15C887632129F5E
 gpg: Good signature from "TAKAHASHI Shuuji <shuuji3@gmail.com>" [ultimate]
 Author: TAKAHASHI Shuuji <shuuji3@gmail.com>
-Date:   Tue May 5 19:34:33 2020 +0900
+Date:   Sun Dec 4 16:32:30 2022 +0900
 
-    Initial commit.
+    feat: add git config commands
 ```
 
 ## GitHub verifies the commit 
