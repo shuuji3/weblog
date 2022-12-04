@@ -9,6 +9,15 @@
         {{ partial "table-of-contents" . }}
         <!-- supports emoji -->
         {{ .Content | emojify }}
+        <hr>
+        <script src="https://utteranc.es/client.js"
+                repo="shuuji3/weblog"
+                issue-term="pathname"
+                label="utterances"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
       </div>
     </article>
   </section>
