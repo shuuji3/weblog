@@ -252,7 +252,7 @@ ssb   ed25519/D1FB45BFF487ED4C 2020-05-05 [A]
 
 ## Export public key to GitHub
 
-GitHubでCommitの署名をVerifyしてもらうためには、公開鍵をexportmして、GitHubに登録する必要があります。
+GitHubでCommitの署名をVerifyしてもらうためには、公開鍵をexportして、GitHubに登録する必要があります。
 
 まず、鍵をexportします。
 
