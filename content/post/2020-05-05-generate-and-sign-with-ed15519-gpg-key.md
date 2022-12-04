@@ -273,18 +273,18 @@ GitHubの設定画面の[SSH and GPG keys](https://github.com/settings/keys)の�
 コミットに署名するようにgitを設定します。
 
 ```shell
-git config --global user.signingkey FC8A43AFCFBCC836
+git config --global user.signingkey 21CD54006A9FD72AAB25DC82FC8A43AFCFBCC836
 git config --global commit.gpgsign true
-git config --global gpg.program gpg2
+git config --global gpg.program gpg
 ```
 
 gitの設定を確認します。
 
 ```shell
 > git config --global -l | egrep '(key|gpg)'
-user.signingkey=FC8A43AFCFBCC836
+user.signingkey=21CD54006A9FD72AAB25DC82FC8A43AFCFBCC836
 commit.gpgsign=true
-gpg.program=gpg2
+gpg.program=gpg
 ```
 
 コミットします。
