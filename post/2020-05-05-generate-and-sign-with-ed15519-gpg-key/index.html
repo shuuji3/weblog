@@ -1,51 +1,49 @@
-<!doctype html><html class=no-js lang=en-us prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"><head><meta charset=utf-8><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=description content><meta property="og:description" content><meta name=author content="map[]"><meta property="og:title" content="ED25519のGPGキーを生成してコミットに署名する"><meta property="twitter:title" content="ED25519のGPGキーを生成してコミットに署名する"><link rel=apple-touch-icon sizes=180x180 href=/images/favicons/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/images/favicons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/images/favicons/favicon-16x16.png><link rel=manifest href=/images/favicons/site.webmanifest><link rel=mask-icon href=/images/favicons/safari-pinned-tab.svg color=#5bbad5><meta name=msapplication-TileColor content="#da532c"><meta name=theme-color content="#ffffff"><base href=https://weblog.shuuji3.xyz/><title>ED25519のGPGキーを生成してコミットに署名する - Weblog by shuuji3</title><link rel=canonical href=https://weblog.shuuji3.xyz/post/2020-05-05-generate-and-sign-with-ed15519-gpg-key/><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/css/Gilroy-ExtraBold.css><link rel=stylesheet href=/css/Gilroy-Light.css><link rel=preconnect href=https://fonts.gstatic.com><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100..700&display=swap" rel=stylesheet><link rel=stylesheet href=https://weblog.shuuji3.xyz/main.min.a137c39ae4eedac73904262b7d6fca1d7e73c08e8f1d28fec9fad966d81f0ec0.css emotion=🤩></head><body lang=en><div class=wrapper-masthead><div class=container><header class="masthead clearfix"><a href=https://weblog.shuuji3.xyz// class=site-avatar><img src=/images/emoji-google-unicorn-face.png></a><div class=site-info><h1 class=site-name><a href=https://weblog.shuuji3.xyz//>Weblog by shuuji3</a></h1><p class=site-description>Software Engineering</p></div><nav><a href=https://shuuji3.xyz/><i class="fa fa-home mr-1" aria-hidden=true></i>Home</a>
+<!doctype html><html class=no-js lang=en-us prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"><head><meta charset=utf-8><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=description content><meta property="og:description" content><meta name=author content="map[]"><meta property="og:title" content="macOSでEd25519のGPGキーを生成してコミットに署名する"><meta property="twitter:title" content="macOSでEd25519のGPGキーを生成してコミットに署名する"><link rel=apple-touch-icon sizes=180x180 href=/images/favicons/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/images/favicons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/images/favicons/favicon-16x16.png><link rel=manifest href=/images/favicons/site.webmanifest><link rel=mask-icon href=/images/favicons/safari-pinned-tab.svg color=#5bbad5><meta name=msapplication-TileColor content="#da532c"><meta name=theme-color content="#ffffff"><base href=https://weblog.shuuji3.xyz/><title>macOSでEd25519のGPGキーを生成してコミットに署名する - Weblog by shuuji3</title><link rel=canonical href=https://weblog.shuuji3.xyz/post/2020-05-05-generate-and-sign-with-ed15519-gpg-key/><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/css/Gilroy-ExtraBold.css><link rel=stylesheet href=/css/Gilroy-Light.css><link rel=preconnect href=https://fonts.gstatic.com><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100..700&display=swap" rel=stylesheet><link rel=stylesheet href=https://weblog.shuuji3.xyz/main.min.a137c39ae4eedac73904262b7d6fca1d7e73c08e8f1d28fec9fad966d81f0ec0.css emotion=🤩></head><body lang=en><div class=wrapper-masthead><div class=container><header class="masthead clearfix"><a href=https://weblog.shuuji3.xyz// class=site-avatar><img src=/images/emoji-google-unicorn-face.png></a><div class=site-info><h1 class=site-name><a href=https://weblog.shuuji3.xyz//>Weblog by shuuji3</a></h1><p class=site-description>Software Engineering</p></div><nav><a href=https://shuuji3.xyz/><i class="fa fa-home mr-1" aria-hidden=true></i>Home</a>
 <a href=https://github.com/shuuji3><i class="fa fa-github mr-1" aria-hidden=true></i>GitHub</a>
-<a href=/dashboard/blog><i class="fa fa-tag mr-1" aria-hidden=true></i>Tags</a></nav></header></div></div><div class=container><section class=section><article class=article><h1 class=title><a href=https://weblog.shuuji3.xyz/post/2020-05-05-generate-and-sign-with-ed15519-gpg-key/>ED25519のGPGキーを生成してコミットに署名する</a></h1><div class=post-metadata><p class=text-muted></p><div class="tags text-muted"><i class="fa fa-tags" aria-hidden=true></i><a class="button is-link code" href=/tags/gpg>gpg</a>
+<a href=/dashboard/blog><i class="fa fa-tag mr-1" aria-hidden=true></i>Tags</a></nav></header></div></div><div class=container><section class=section><article class=article><h1 class=title><a href=https://weblog.shuuji3.xyz/post/2020-05-05-generate-and-sign-with-ed15519-gpg-key/>macOSでEd25519のGPGキーを生成してコミットに署名する</a></h1><div class=post-metadata><p class=text-muted></p><div class="tags text-muted"><i class="fa fa-tags" aria-hidden=true></i><a class="button is-link code" href=/tags/gpg>gpg</a>
 <a class="button is-link code" href=/tags/git>git</a>
-<a class="button is-link code" href=/tags/github>github</a></div><p class=text-muted><i class="fa fa-calendar" aria-hidden=true></i>May 5, 2020</p></div><div class=content><div class="well post-banner"></div><div class="table-of-contents toc bd-callout"><h4 class=text-muted>Table of Contents</h4><ul class=toc-h1><ul class=toc-h2><li><a href=/post/2020-05-05-generate-and-sign-with-ed15519-gpg-key/#generate-key>Generate key</a></li></ul></ul><ul class=toc-h1><ul class=toc-h2><li><a href=/post/2020-05-05-generate-and-sign-with-ed15519-gpg-key/#add-subkeys>Add subkeys</a></li></ul></ul><ul class=toc-h1><ul class=toc-h2><li><a href=/post/2020-05-05-generate-and-sign-with-ed15519-gpg-key/#export-public-key-to-github>Export public key to GitHub</a></li></ul></ul><ul class=toc-h1><ul class=toc-h2><li><a href=/post/2020-05-05-generate-and-sign-with-ed15519-gpg-key/#commit-with-the-signature>Commit with the signature</a></li></ul></ul><ul class=toc-h1><ul class=toc-h2><li><a href=/post/2020-05-05-generate-and-sign-with-ed15519-gpg-key/#confirm-the-commit-signed>Confirm the commit signed</a></li></ul></ul><ul class=toc-h1><ul class=toc-h2><li><a href=/post/2020-05-05-generate-and-sign-with-ed15519-gpg-key/#github-verifies-the-commit>GitHub verifies the commit</a></li></ul></ul><ul class=toc-h1><ul class=toc-h2><li><a href=/post/2020-05-05-generate-and-sign-with-ed15519-gpg-key/#reference>Reference</a></li></ul></ul></div><p>GnuPGでED25519のGPGキーを生成し、Gitのコミットに署名を行います。そして、GitHubに生成した鍵を登録することで、署名が検証されることを確認します。</p><h2 id=generate-key>Generate key</h2><p>まずは鍵を生成します。</p><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell>&gt; gpg --expert --full-gen-key
-gpg <span class=o>(</span>GnuPG<span class=o>)</span> 2.2.20<span class=p>;</span> Copyright <span class=o>(</span>C<span class=o>)</span> <span class=m>2020</span> Free Software Foundation, Inc.
+<a class="button is-link code" href=/tags/github>github</a></div><p class=text-muted><i class="fa fa-calendar" aria-hidden=true></i>May 5, 2020</p></div><div class=content><div class="well post-banner"></div><div class="table-of-contents toc bd-callout"><h4 class=text-muted>Table of Contents</h4><ul class=toc-h1><ul class=toc-h2><li><a href=/post/2020-05-05-generate-and-sign-with-ed15519-gpg-key/#check-gpg-version>Check GPG version</a></li></ul></ul><ul class=toc-h1><ul class=toc-h2><li><a href=/post/2020-05-05-generate-and-sign-with-ed15519-gpg-key/#generate-key>Generate key</a></li></ul></ul><ul class=toc-h1><ul class=toc-h2><li><a href=/post/2020-05-05-generate-and-sign-with-ed15519-gpg-key/#confirm-key-generation>Confirm key generation</a></li></ul></ul><ul class=toc-h1><ul class=toc-h2><li><a href=/post/2020-05-05-generate-and-sign-with-ed15519-gpg-key/#export-public-key-to-github>Export public key to GitHub</a></li></ul></ul><ul class=toc-h1><ul class=toc-h2><li><a href=/post/2020-05-05-generate-and-sign-with-ed15519-gpg-key/#commit-with-the-signature>Commit with the signature</a></li></ul></ul><ul class=toc-h1><ul class=toc-h2><li><a href=/post/2020-05-05-generate-and-sign-with-ed15519-gpg-key/#confirm-the-commit-signed>Confirm the commit signed</a></li></ul></ul><ul class=toc-h1><ul class=toc-h2><li><a href=/post/2020-05-05-generate-and-sign-with-ed15519-gpg-key/#github-verifies-the-commit>GitHub verifies the commit</a></li></ul></ul><ul class=toc-h1><ul class=toc-h2><li><a href=/post/2020-05-05-generate-and-sign-with-ed15519-gpg-key/#reference>Reference</a></li></ul></ul></div><p>macOSでGnuPGでEd25519のGPGキーを生成し、Gitのコミットに署名を行います。そして、GitHubに生成した鍵を登録することで、署名が検証されることを確認します。</p><p>Updated: 2022-12-04</p><h2 id=check-gpg-version>Check GPG version</h2><p>Homebrewでインストールしたgpg (GnuPG) 2.3.8を使用します。</p><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell>gpg --version
+gpg <span class=o>(</span>GnuPG<span class=o>)</span> 2.3.8
+libgcrypt 1.10.1
+Copyright <span class=o>(</span>C<span class=o>)</span> <span class=m>2021</span> Free Software Foundation, Inc.
+License GNU GPL-3.0-or-later &lt;https://gnu.org/licenses/gpl.html&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Home: /Users/shuuji3/.gnupg
+Supported algorithms:
+Pubkey: RSA, ELG, DSA, ECDH, ECDSA, EDDSA
+Cipher: IDEA, 3DES, CAST5, BLOWFISH, AES, AES192, AES256, TWOFISH,
+        CAMELLIA128, CAMELLIA192, CAMELLIA256
+AEAD: EAX, OCB
+Hash: SHA1, RIPEMD160, SHA256, SHA384, SHA512, SHA224
+Compression: Uncompressed, ZIP, ZLIB, BZIP2
+</code></pre></div><h2 id=generate-key>Generate key</h2><p>まずは鍵を生成します。GPG>=2.1.17 では、従来の <code>--gen-key</code> の代わりに <code>--full-generate-key</code> で作成します。</p><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell>&gt; gpg --full-generate-key
+gpg <span class=o>(</span>GnuPG<span class=o>)</span> 2.3.8<span class=p>;</span> Copyright <span class=o>(</span>C<span class=o>)</span> <span class=m>2021</span> Free Software Foundation, Inc.
 This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
 
 Please <span class=k>select</span> what kind of key you want:
-   <span class=o>(</span>1<span class=o>)</span> RSA and RSA <span class=o>(</span>default<span class=o>)</span>
+   <span class=o>(</span>1<span class=o>)</span> RSA and RSA
    <span class=o>(</span>2<span class=o>)</span> DSA and Elgamal
    <span class=o>(</span>3<span class=o>)</span> DSA <span class=o>(</span>sign only<span class=o>)</span>
    <span class=o>(</span>4<span class=o>)</span> RSA <span class=o>(</span>sign only<span class=o>)</span>
-   <span class=o>(</span>7<span class=o>)</span> DSA <span class=o>(</span><span class=nb>set</span> your own capabilities<span class=o>)</span>
-   <span class=o>(</span>8<span class=o>)</span> RSA <span class=o>(</span><span class=nb>set</span> your own capabilities<span class=o>)</span>
-   <span class=o>(</span>9<span class=o>)</span> ECC and ECC
+   <span class=o>(</span>9<span class=o>)</span> ECC <span class=o>(</span>sign and encrypt<span class=o>)</span> *default*
   <span class=o>(</span>10<span class=o>)</span> ECC <span class=o>(</span>sign only<span class=o>)</span>
-  <span class=o>(</span>11<span class=o>)</span> ECC <span class=o>(</span><span class=nb>set</span> your own capabilities<span class=o>)</span>
-  <span class=o>(</span>13<span class=o>)</span> Existing key
   <span class=o>(</span>14<span class=o>)</span> Existing key from card
-Your selection? <span class=m>11</span>
-
-Possible actions <span class=k>for</span> a ECDSA/EdDSA key: Sign Certify Authenticate
-Current allowed actions: Sign Certify
-
-   <span class=o>(</span>S<span class=o>)</span> Toggle the sign capability
-   <span class=o>(</span>A<span class=o>)</span> Toggle the authenticate capability
-   <span class=o>(</span>Q<span class=o>)</span> Finished
-
-Your selection?
+Your selection? 
 Please <span class=k>select</span> which elliptic curve you want:
-   <span class=o>(</span>1<span class=o>)</span> Curve <span class=m>25519</span>
-   <span class=o>(</span>3<span class=o>)</span> NIST P-256
+   <span class=o>(</span>1<span class=o>)</span> Curve <span class=m>25519</span> *default*
    <span class=o>(</span>4<span class=o>)</span> NIST P-384
-   <span class=o>(</span>5<span class=o>)</span> NIST P-521
    <span class=o>(</span>6<span class=o>)</span> Brainpool P-256
-   <span class=o>(</span>7<span class=o>)</span> Brainpool P-384
-   <span class=o>(</span>8<span class=o>)</span> Brainpool P-512
-   <span class=o>(</span>9<span class=o>)</span> secp256k1
-Your selection? <span class=m>1</span>
+Your selection? 
 Please specify how long the key should be valid.
          <span class=nv>0</span> <span class=o>=</span> key does not expire
       &lt;n&gt;  <span class=o>=</span> key expires in n days
       &lt;n&gt;w <span class=o>=</span> key expires in n weeks
       &lt;n&gt;m <span class=o>=</span> key expires in n months
       &lt;n&gt;y <span class=o>=</span> key expires in n years
-Key is valid <span class=k>for</span>? <span class=o>(</span>0<span class=o>)</span>
+Key is valid <span class=k>for</span>? <span class=o>(</span>0<span class=o>)</span> 
 Key does not expire at all
 Is this correct? <span class=o>(</span>y/N<span class=o>)</span> y
 
@@ -53,7 +51,7 @@ GnuPG needs to construct a user ID to identify your key.
 
 Real name: TAKAHASHI Shuuji
 Email address: shuuji3@gmail.com
-Comment:
+Comment: 
 You selected this USER-ID:
     <span class=s2>&#34;TAKAHASHI Shuuji &lt;shuuji3@gmail.com&gt;&#34;</span>
 
@@ -62,192 +60,50 @@ We need to generate a lot of random bytes. It is a good idea to perform
 some other action <span class=o>(</span><span class=nb>type</span> on the keyboard, move the mouse, utilize the
 disks<span class=o>)</span> during the prime generation<span class=p>;</span> this gives the random number
 generator a better chance to gain enough entropy.
-gpg: key FC8A43AFCFBCC836 marked as ultimately trusted
-gpg: revocation certificate stored as <span class=s1>&#39;/Users/shuuji/.gnupg/openpgp-revocs.d/21CD54006A9FD72AAB25DC82FC8A43AFCFBCC836.rev&#39;</span>
+We need to generate a lot of random bytes. It is a good idea to perform
+some other action <span class=o>(</span><span class=nb>type</span> on the keyboard, move the mouse, utilize the
+disks<span class=o>)</span> during the prime generation<span class=p>;</span> this gives the random number
+generator a better chance to gain enough entropy.
+gpg: revocation certificate stored as <span class=s1>&#39;/Users/shuuji3/.gnupg/openpgp-revocs.d/8291C416B80C0D07B3EC35B3F15C887632129F5E.rev&#39;</span>
 public and secret key created and signed.
 
-pub   ed25519 2020-05-05 <span class=o>[</span>SC<span class=o>]</span>
-      21CD54006A9FD72AAB25DC82FC8A43AFCFBCC836
+pub   ed25519 2022-12-04 <span class=o>[</span>SC<span class=o>]</span>
+      8291C416B80C0D07B3EC35B3F15C887632129F5E
 uid                      TAKAHASHI Shuuji &lt;shuuji3@gmail.com&gt;
-</code></pre></div><h2 id=add-subkeys>Add subkeys</h2><p>生成した鍵に対して、署名用と認証用の2つのサブキーを追加します。生成された鍵の指紋<code>21CD54006A9FD72AAB25DC82FC8A43AFCFBCC836</code>を指定して、<code>--edit-key</code>を行います。</p><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell>&gt; gpg --expert --edit-key 21CD54006A9FD72AAB25DC82FC8A43AFCFBCC836
-gpg <span class=o>(</span>GnuPG<span class=o>)</span> 2.2.20<span class=p>;</span> Copyright <span class=o>(</span>C<span class=o>)</span> <span class=m>2020</span> Free Software Foundation, Inc.
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.
-
-Secret key is available.
-
-sec  ed25519/FC8A43AFCFBCC836
-     created: 2020-05-05  expires: never       usage: SC
-     trust: ultimate      validity: ultimate
-<span class=o>[</span>ultimate<span class=o>]</span> <span class=o>(</span>1<span class=o>)</span>. TAKAHASHI Shuuji &lt;shuuji3@gmail.com&gt;
-
-gpg&gt; addkey
-Please <span class=k>select</span> what kind of key you want:
-   <span class=o>(</span>3<span class=o>)</span> DSA <span class=o>(</span>sign only<span class=o>)</span>
-   <span class=o>(</span>4<span class=o>)</span> RSA <span class=o>(</span>sign only<span class=o>)</span>
-   <span class=o>(</span>5<span class=o>)</span> Elgamal <span class=o>(</span>encrypt only<span class=o>)</span>
-   <span class=o>(</span>6<span class=o>)</span> RSA <span class=o>(</span>encrypt only<span class=o>)</span>
-   <span class=o>(</span>7<span class=o>)</span> DSA <span class=o>(</span><span class=nb>set</span> your own capabilities<span class=o>)</span>
-   <span class=o>(</span>8<span class=o>)</span> RSA <span class=o>(</span><span class=nb>set</span> your own capabilities<span class=o>)</span>
-  <span class=o>(</span>10<span class=o>)</span> ECC <span class=o>(</span>sign only<span class=o>)</span>
-  <span class=o>(</span>11<span class=o>)</span> ECC <span class=o>(</span><span class=nb>set</span> your own capabilities<span class=o>)</span>
-  <span class=o>(</span>12<span class=o>)</span> ECC <span class=o>(</span>encrypt only<span class=o>)</span>
-  <span class=o>(</span>13<span class=o>)</span> Existing key
-  <span class=o>(</span>14<span class=o>)</span> Existing key from card
-Your selection? <span class=m>11</span>
-
-Possible actions <span class=k>for</span> a ECDSA/EdDSA key: Sign Authenticate
-Current allowed actions: Sign
-
-   <span class=o>(</span>S<span class=o>)</span> Toggle the sign capability
-   <span class=o>(</span>A<span class=o>)</span> Toggle the authenticate capability
-   <span class=o>(</span>Q<span class=o>)</span> Finished
-
-Your selection?
-Please <span class=k>select</span> which elliptic curve you want:
-   <span class=o>(</span>1<span class=o>)</span> Curve <span class=m>25519</span>
-   <span class=o>(</span>3<span class=o>)</span> NIST P-256
-   <span class=o>(</span>4<span class=o>)</span> NIST P-384
-   <span class=o>(</span>5<span class=o>)</span> NIST P-521
-   <span class=o>(</span>6<span class=o>)</span> Brainpool P-256
-   <span class=o>(</span>7<span class=o>)</span> Brainpool P-384
-   <span class=o>(</span>8<span class=o>)</span> Brainpool P-512
-   <span class=o>(</span>9<span class=o>)</span> secp256k1
-Your selection? <span class=m>1</span>
-Please specify how long the key should be valid.
-         <span class=nv>0</span> <span class=o>=</span> key does not expire
-      &lt;n&gt;  <span class=o>=</span> key expires in n days
-      &lt;n&gt;w <span class=o>=</span> key expires in n weeks
-      &lt;n&gt;m <span class=o>=</span> key expires in n months
-      &lt;n&gt;y <span class=o>=</span> key expires in n years
-Key is valid <span class=k>for</span>? <span class=o>(</span>0<span class=o>)</span>
-Key does not expire at all
-Is this correct? <span class=o>(</span>y/N<span class=o>)</span> y
-Really create? <span class=o>(</span>y/N<span class=o>)</span> y
-We need to generate a lot of random bytes. It is a good idea to perform
-some other action <span class=o>(</span><span class=nb>type</span> on the keyboard, move the mouse, utilize the
-disks<span class=o>)</span> during the prime generation<span class=p>;</span> this gives the random number
-generator a better chance to gain enough entropy.
-
-sec  ed25519/FC8A43AFCFBCC836
-     created: 2020-05-05  expires: never       usage: SC
-     trust: ultimate      validity: ultimate
-ssb  ed25519/6FA31977C6C288BB
-     created: 2020-05-05  expires: never       usage: S
-<span class=o>[</span>ultimate<span class=o>]</span> <span class=o>(</span>1<span class=o>)</span>. TAKAHASHI Shuuji &lt;shuuji3@gmail.com&gt;
-
-gpg&gt; addkey
-Please <span class=k>select</span> what kind of key you want:
-   <span class=o>(</span>3<span class=o>)</span> DSA <span class=o>(</span>sign only<span class=o>)</span>
-   <span class=o>(</span>4<span class=o>)</span> RSA <span class=o>(</span>sign only<span class=o>)</span>
-   <span class=o>(</span>5<span class=o>)</span> Elgamal <span class=o>(</span>encrypt only<span class=o>)</span>
-   <span class=o>(</span>6<span class=o>)</span> RSA <span class=o>(</span>encrypt only<span class=o>)</span>
-   <span class=o>(</span>7<span class=o>)</span> DSA <span class=o>(</span><span class=nb>set</span> your own capabilities<span class=o>)</span>
-   <span class=o>(</span>8<span class=o>)</span> RSA <span class=o>(</span><span class=nb>set</span> your own capabilities<span class=o>)</span>
-  <span class=o>(</span>10<span class=o>)</span> ECC <span class=o>(</span>sign only<span class=o>)</span>
-  <span class=o>(</span>11<span class=o>)</span> ECC <span class=o>(</span><span class=nb>set</span> your own capabilities<span class=o>)</span>
-  <span class=o>(</span>12<span class=o>)</span> ECC <span class=o>(</span>encrypt only<span class=o>)</span>
-  <span class=o>(</span>13<span class=o>)</span> Existing key
-  <span class=o>(</span>14<span class=o>)</span> Existing key from card
-Your selection? <span class=m>11</span>
-
-Possible actions <span class=k>for</span> a ECDSA/EdDSA key: Sign Authenticate
-Current allowed actions: Sign
-
-   <span class=o>(</span>S<span class=o>)</span> Toggle the sign capability
-   <span class=o>(</span>A<span class=o>)</span> Toggle the authenticate capability
-   <span class=o>(</span>Q<span class=o>)</span> Finished
-
-Your selection? s
-
-Possible actions <span class=k>for</span> a ECDSA/EdDSA key: Sign Authenticate
-Current allowed actions:
-
-   <span class=o>(</span>S<span class=o>)</span> Toggle the sign capability
-   <span class=o>(</span>A<span class=o>)</span> Toggle the authenticate capability
-   <span class=o>(</span>Q<span class=o>)</span> Finished
-
-Your selection? a
-
-Possible actions <span class=k>for</span> a ECDSA/EdDSA key: Sign Authenticate
-Current allowed actions: Authenticate
-
-   <span class=o>(</span>S<span class=o>)</span> Toggle the sign capability
-   <span class=o>(</span>A<span class=o>)</span> Toggle the authenticate capability
-   <span class=o>(</span>Q<span class=o>)</span> Finished
-
-Your selection? q
-Please <span class=k>select</span> which elliptic curve you want:
-   <span class=o>(</span>1<span class=o>)</span> Curve <span class=m>25519</span>
-   <span class=o>(</span>3<span class=o>)</span> NIST P-256
-   <span class=o>(</span>4<span class=o>)</span> NIST P-384
-   <span class=o>(</span>5<span class=o>)</span> NIST P-521
-   <span class=o>(</span>6<span class=o>)</span> Brainpool P-256
-   <span class=o>(</span>7<span class=o>)</span> Brainpool P-384
-   <span class=o>(</span>8<span class=o>)</span> Brainpool P-512
-   <span class=o>(</span>9<span class=o>)</span> secp256k1
-Your selection? q
-Invalid selection.
-Your selection? <span class=m>1</span>
-Please specify how long the key should be valid.
-         <span class=nv>0</span> <span class=o>=</span> key does not expire
-      &lt;n&gt;  <span class=o>=</span> key expires in n days
-      &lt;n&gt;w <span class=o>=</span> key expires in n weeks
-      &lt;n&gt;m <span class=o>=</span> key expires in n months
-      &lt;n&gt;y <span class=o>=</span> key expires in n years
-Key is valid <span class=k>for</span>? <span class=o>(</span>0<span class=o>)</span>
-Key does not expire at all
-Is this correct? <span class=o>(</span>y/N<span class=o>)</span> y
-Really create? <span class=o>(</span>y/N<span class=o>)</span> y
-We need to generate a lot of random bytes. It is a good idea to perform
-some other action <span class=o>(</span><span class=nb>type</span> on the keyboard, move the mouse, utilize the
-disks<span class=o>)</span> during the prime generation<span class=p>;</span> this gives the random number
-generator a better chance to gain enough entropy.
-
-sec  ed25519/FC8A43AFCFBCC836
-     created: 2020-05-05  expires: never       usage: SC
-     trust: ultimate      validity: ultimate
-ssb  ed25519/6FA31977C6C288BB
-     created: 2020-05-05  expires: never       usage: S
-ssb  ed25519/D1FB45BFF487ED4C
-     created: 2020-05-05  expires: never       usage: A
-<span class=o>[</span>ultimate<span class=o>]</span> <span class=o>(</span>1<span class=o>)</span>. TAKAHASHI Shuuji &lt;shuuji3@gmail.com&gt;
-
-gpg&gt; save
-</code></pre></div><p>最後に<code>save</code>コマンドで保存しないと、結果が失われてしまうので注意します。サブキーが登録されたことを確認します。</p><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell>&gt; gpg --list-secret-keys --keyid-format LONG
-/Users/shuuji/.gnupg/pubring.kbx
---------------------------------
-sec   ed25519/FC8A43AFCFBCC836 2020-05-05 <span class=o>[</span>SC<span class=o>]</span>
-      21CD54006A9FD72AAB25DC82FC8A43AFCFBCC836
+sub   cv25519 2022-12-04 <span class=o>[</span>E<span class=o>]</span>
+</code></pre></div><h2 id=confirm-key-generation>Confirm key generation</h2><p>GPGキーが登録されたことを確認します。</p><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell>&gt; gpg --list-secret-keys --keyid-format LONG
+/Users/shuuji3/.gnupg/pubring.kbx
+---------------------------------
+sec   ed25519/F15C887632129F5E 2022-12-04 <span class=o>[</span>SC<span class=o>]</span>
+      8291C416B80C0D07B3EC35B3F15C887632129F5E
 uid                 <span class=o>[</span>ultimate<span class=o>]</span> TAKAHASHI Shuuji &lt;shuuji3@gmail.com&gt;
-ssb   ed25519/6FA31977C6C288BB 2020-05-05 <span class=o>[</span>S<span class=o>]</span>
-ssb   ed25519/D1FB45BFF487ED4C 2020-05-05 <span class=o>[</span>A<span class=o>]</span>
-</code></pre></div><h2 id=export-public-key-to-github>Export public key to GitHub</h2><p>GitHubでCommitの署名をVerifyしてもらうためには、公開鍵をexportして、GitHubに登録する必要があります。</p><p>まず、鍵をexportします。</p><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell>&gt; gpg --export --armor 21CD54006A9FD72AAB25DC82FC8A43AFCFBCC836
+ssb   cv25519/427EF0BB512D5D98 2022-12-04 <span class=o>[</span>E<span class=o>]</span>
+</code></pre></div><h2 id=export-public-key-to-github>Export public key to GitHub</h2><p>GitHubでCommitの署名をVerifyしてもらうためには、公開鍵をexportして、GitHubに登録する必要があります。</p><p>まず、鍵をexportします。</p><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell>&gt; gpg --export --armor 8291C416B80C0D07B3EC35B3F15C887632129F5E
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
 <span class=o>(</span>...<span class=o>)</span>
 
 -----END PGP PUBLIC KEY BLOCK-----
 
-</code></pre></div><p>GitHubの設定画面の<a href=https://github.com/settings/keys>SSH and GPG keys</a>の「New GPG key」ボタンをクリックして、出力された鍵をコピー＆ペーストして登録します。</p><h2 id=commit-with-the-signature>Commit with the signature</h2><p>コミットに署名するようにgitを設定します。</p><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell>git config --global user.signingkey 21CD54006A9FD72AAB25DC82FC8A43AFCFBCC836
+</code></pre></div><p>GitHubの設定画面の<a href=https://github.com/settings/keys>SSH and GPG keys</a>の「New GPG key」ボタンをクリックして、出力された鍵をコピー＆ペーストして登録します。</p><h2 id=commit-with-the-signature>Commit with the signature</h2><p>コミットに署名するようにgitを設定します。</p><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell>git config --global user.signingkey 8291C416B80C0D07B3EC35B3F15C887632129F5E
 git config --global commit.gpgsign <span class=nb>true</span>
 git config --global gpg.program gpg
 </code></pre></div><p>gitの設定を確認します。</p><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell>&gt; git config --global -l <span class=p>|</span> egrep <span class=s1>&#39;(key|gpg)&#39;</span>
-user.signingkey<span class=o>=</span>21CD54006A9FD72AAB25DC82FC8A43AFCFBCC836
+user.signingkey<span class=o>=</span>8291C416B80C0D07B3EC35B3F15C887632129F5E
 commit.gpgsign<span class=o>=</span><span class=nb>true</span>
 gpg.program<span class=o>=</span>gpg
 </code></pre></div><p>コミットします。</p><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell>&gt; git add .
 &gt; git commit -m <span class=s1>&#39;Initial commit.&#39;</span>
 &gt; git push
 </code></pre></div><h2 id=confirm-the-commit-signed>Confirm the commit signed</h2><p><code>git log</code>サブコマンドに<code>--show-signature</code>オプションを指定すると、当該コミットの署名の情報が確認できます。</p><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell>&gt; git log --show-signature
-commit 9c8a8a64d94c665b6da962cfba6194ea36f355f9 <span class=o>(</span>HEAD -&gt; master, origin/master<span class=o>)</span>
-gpg: Signature made 火  5/ <span class=m>5</span> 19:34:33 <span class=m>2020</span> JST
-gpg:                using EDDSA key 21CD54006A9FD72AAB25DC82FC8A43AFCFBCC836
+commit e8aa843140456405031ffdfe56c60912f32f9579
+gpg: Signature made 日 12/ <span class=m>4</span> 16:32:30 <span class=m>2022</span> JST
+gpg:                using EDDSA key 8291C416B80C0D07B3EC35B3F15C887632129F5E
 gpg: Good signature from <span class=s2>&#34;TAKAHASHI Shuuji &lt;shuuji3@gmail.com&gt;&#34;</span> <span class=o>[</span>ultimate<span class=o>]</span>
 Author: TAKAHASHI Shuuji &lt;shuuji3@gmail.com&gt;
-Date:   Tue May <span class=m>5</span> 19:34:33 <span class=m>2020</span> +0900
+Date:   Sun Dec <span class=m>4</span> 16:32:30 <span class=m>2022</span> +0900
 
-    Initial commit.
+    feat: add git config commands
 </code></pre></div><h2 id=github-verifies-the-commit>GitHub verifies the commit</h2><p>コミットに正しく署名されていれば、以下のようにリポジトリのコミット一覧で「Verified」バッジが表示されます。</p><p><img src=images/github-commit-verified-signature.png alt=コミット一覧の「Verified」バッジ></p><h2 id=reference>Reference</h2><ul><li><p><a href=https://www.gniibe.org/memo/software/gpg/keygen-25519.html>Creating newer ECC keys for GnuPG</a></p><ul><li>ED25519のGPGキーの作り方が書かれている。</li></ul></li><li><p><a href=https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work>Git - Signing Your Work</a></p><ul><li>gitコマンドの署名に関する詳しい説明が書かれている。</li></ul></li><li><p><a href=https://help.github.com/github/authenticating-to-github/managing-commit-signature-verification>Managing commit signature verification - GitHub Help</a></p><ul><li>コミットの署名の検証について書かれたGitHubのヘルプページ。</li></ul></li></ul></div></article></section></div><div class=container><div class=pagination><a class="btn btn-secondary pull-right" href=https://weblog.shuuji3.xyz/post/2020-05-03-first-contribution-to-kubernetes/><i class="fa fa-chevron-left" aria-hidden=true></i>Previous</a>
 <a class="btn btn-secondary pull-right" href=https://weblog.shuuji3.xyz/post/2020-07-17-get-github-arctic-code-vault-contributor-badge/>Next <i class="fa fa-chevron-right" aria-hidden=true></i></a></div></div><div class=wrapper-footer><div class=container><footer class=footer><a rel=license href=https://creativecommons.org/licenses/by/4.0/><img alt="Creative Commons License CC-BY 4.0" src=/images/cc-by.svg></a>
 <a href=https://gohugo.io/><img src=/images/powered-by-hugo.svg alt="powered by hugo"></a><p>This work is licensed under a
