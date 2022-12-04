@@ -229,13 +229,13 @@ ssb   ed25519/D1FB45BFF487ED4C 2020-05-05 <span class=o>[</span>A<span class=o>]
 
 -----END PGP PUBLIC KEY BLOCK-----
 
-</code></pre></div><p>GitHubの設定画面の<a href=https://github.com/settings/keys>SSH and GPG keys</a>の「New GPG key」ボタンをクリックして、出力された鍵をコピー＆ペーストして登録します。</p><h2 id=commit-with-the-signature>Commit with the signature</h2><p>コミットに署名するようにgitを設定します。</p><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell>git config --global user.signingkey 21CD54006A9FD72AAB25DC82FC8A43AFCFBCC836
+</code></pre></div><p>GitHubの設定画面の<a href=https://github.com/settings/keys>SSH and GPG keys</a>の「New GPG key」ボタンをクリックして、出力された鍵をコピー＆ペーストして登録します。</p><h2 id=commit-with-the-signature>Commit with the signature</h2><p>コミットに署名するようにgitを設定します。</p><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell>git config --global user.signingkey FC8A43AFCFBCC836
 git config --global commit.gpgsign <span class=nb>true</span>
-git config --global gpg.program gpg
+git config --global gpg.program gpg2
 </code></pre></div><p>gitの設定を確認します。</p><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell>&gt; git config --global -l <span class=p>|</span> egrep <span class=s1>&#39;(key|gpg)&#39;</span>
-user.signingkey<span class=o>=</span>21CD54006A9FD72AAB25DC82FC8A43AFCFBCC836
+user.signingkey<span class=o>=</span>FC8A43AFCFBCC836
 commit.gpgsign<span class=o>=</span><span class=nb>true</span>
-gpg.program<span class=o>=</span>gpg
+gpg.program<span class=o>=</span>gpg2
 </code></pre></div><p>コミットします。</p><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell>&gt; git add .
 &gt; git commit -m <span class=s1>&#39;Initial commit.&#39;</span>
 &gt; git push
