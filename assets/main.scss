@@ -87,7 +87,7 @@ strong {
     border-radius: 0.25em;
 }
 
-p code {
+p a:has(> code) {
     color: #c7254e !important;
 }
 
