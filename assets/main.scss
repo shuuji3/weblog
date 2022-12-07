@@ -80,9 +80,11 @@ strong {
     padding: 1rem;
 }
 
-code {
-    color: black !important;
-    background-color: #f8f8f8 !important;
+:not(pre) > code {
+    color: #c7254e;
+    background-color: #fce4ec;
+    padding: 0.125em 0.25em;
+    border-radius: 0.25em;
 }
 
 p code {
