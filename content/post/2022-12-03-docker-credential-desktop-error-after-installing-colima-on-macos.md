@@ -1,5 +1,5 @@
 ---
-title: "`docker-credential-desktop` Error After Installing Colima on MacOS"
+title: "The `docker-credential-desktop` error after installing Colima on macOS"
 date: 2022-12-03T11:16:44+09:00
 tags: ["colima", "docker"]
 toc: true
