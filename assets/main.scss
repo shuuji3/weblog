@@ -16,9 +16,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2, h3, h4, h5, h6 {
-    width: fit-content;
+    margin-block-start: 1.5em;
     padding-right: 0.25em;
-
+    width: fit-content;
     box-shadow: inset 0 -3px 0 0 gold;
 }
 
