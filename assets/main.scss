@@ -111,6 +111,10 @@ p a:has(> code) {
     margin: 1rem 0;
 }
 
+.fa {
+    margin-inline-end: 0.25em;
+}
+
 .tags > .code {
     padding: 0.25em 0.5em;
     border: 1px solid rgba(199, 37, 78, 0.5);
