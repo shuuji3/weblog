@@ -8,4 +8,4 @@ tasks:
   - command: |
       brew install hugo
       git submodule update --init --recursive
-      make serve
+      hugo serve --baseURL $(gp url 1313) --appendPort=false --bind localhost
