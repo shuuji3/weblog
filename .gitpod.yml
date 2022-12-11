@@ -5,7 +5,8 @@ ports:
 
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - command: |
+  - init: |
       brew install hugo
       git submodule update --init --recursive
+    command: |
       hugo serve --baseURL $(gp url 1313) --appendPort=false --bind localhost
