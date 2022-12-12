@@ -107,6 +107,10 @@ p a:has(> code) {
     border-bottom: none;
 }
 
+article + article {
+    border-top: gold solid 1px;
+}
+
 .card {
     margin: 1rem 0;
 }
