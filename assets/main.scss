@@ -150,6 +150,13 @@ li {
     }
 }
 
+.btn-primary {
+    background-color: #2196f3;
+    &.disabled, &:hover {
+        background-color: #9ed1fa;
+    }
+}
+
 footer img {
     max-height: 50px;
     max-width: 200px;
