@@ -80,8 +80,10 @@ strong {
     border-top: 4px #ffeb3b solid;
 }
 
-.highlight .chroma {
+.highlight > pre {
     padding: 1rem;
+    border: rgb(238, 238, 238) solid 1px;
+    border-radius: 0.5em;
 }
 
 :not(pre) > code {
