@@ -24,5 +24,5 @@ GoogleAnalytics = "UA-7053288-5"
 
 [markup]
   [markup.highlight]
-    noClasses = false
-    style = "pastie"
+    noClasses = true
+    style = "github"
