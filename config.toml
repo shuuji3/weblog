@@ -1,5 +1,5 @@
 baseURL = "https://weblog.shuuji3.xyz/"
-languageCode = "ja-jp"
+languageCode = "en-us"
 title = "Weblog by shuuji3"
 # theme
 theme = "hugo-now"
