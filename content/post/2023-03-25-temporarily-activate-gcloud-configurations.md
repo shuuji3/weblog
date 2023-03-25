@@ -25,4 +25,8 @@ You can create a `configurations` with `gcloud config configurations` sub-subcom
 
 However, I found out that sometimes I forgot to switch back to the previous project and I was about to run a wrong command against different project. That can cause an unwanted incident.
 
-To mitigate the risk of such an incident, you can use a special environment variable `CLOUDSDK_ACTIVE_CONFIG_NAME` so that the specified configurations only within the terminal. If you use the terminal in your editor and the editor has one window for one project, it becomes rare to run wrong `gcloud` command on the other project. 
+To mitigate the risk of such an incident, you can use a special environment variable `CLOUDSDK_ACTIVE_CONFIG_NAME` so that the specified configurations only within the terminal. If you use the terminal in your editor and the editor has one window for one project, it becomes rare to run wrong `gcloud` command on the other project.
+
+## References
+
+- [Managing gcloud CLI configurations  |  Google Cloud CLI Documentation](https://cloud.google.com/sdk/docs/configurations#activating_a_configuration)
