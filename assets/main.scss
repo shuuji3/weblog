@@ -139,6 +139,11 @@ article + article {
     margin-inline-end: 0.25em;
 }
 
+.post-date, .tags {
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
 .tags > .code {
     padding: 0.25em 0.5em;
     border: 1px solid rgba(199, 37, 78, 0.5);
