@@ -5,6 +5,12 @@
     }
 }
 
+@mixin small {
+    @media screen and (max-width: calc(1000px + 1rem)) {
+        @content;
+    }
+}
+
 body {
     background-color: #fdedf2;
     font-family: Poppins, sans-serif !important;
@@ -108,9 +114,12 @@ p a:has(> code) {
     margin: 1rem auto;
     border-radius: 1rem;
 
+    @include small {
+        border-radius: 0;
+    }
+
     @include mobile {
         padding: 1rem;
-        border-radius: 0;
     }
 }
 
