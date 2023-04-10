@@ -154,6 +154,10 @@ li {
     }
 }
 
+.utterances {
+    min-height: 269px;
+}
+
 .btn-primary {
     background-color: #2196f3;
     &.disabled, &:hover {
