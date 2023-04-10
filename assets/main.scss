@@ -174,8 +174,13 @@ li {
     }
 }
 
-footer img {
-    max-height: 50px;
-    max-width: 200px;
-    margin: 0.5rem;
+footer {
+    a {
+        display: inline-block;
+    }
+    img {
+        max-height: 50px;
+        max-width: 200px;
+        margin: 0.5rem;
+    }
 }
