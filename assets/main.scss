@@ -179,6 +179,12 @@ li {
     }
 }
 
+blockquote {
+    box-shadow: inset 3px 0 gold;
+    padding-inline-start: 1rem;
+    font-style: italic;
+}
+
 footer {
     a {
         display: inline-block;
