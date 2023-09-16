@@ -27,7 +27,7 @@ Here's an example output from https://www.taipower.com.tw/d006/loadGraph/loadGra
 ...
 ```
 
-Yes, this is apparently Moji-bake. I've only had experience in Japanese encoding. So I couldn't point out what is the original encoding from Moji-bake'd characters.
+Yes, this is clearly Moji-bake. I've only had experience in Japanese encoding. So I couldn't point out what is the original encoding from Moji-bake'd characters.
 
 For Japanese, very old legacy sites, or ones made by outdated organizations, still sometimes uses non-UTF-8 encoding in this era! The common encodings are "Shift JIS" (or [Windows modified version of it called CP932](https://en.wikipedia.org/wiki/Code_page_932_(Microsoft_Windows)) and "EUC-JP", that was used by old Japanese Linux environment. And Moji-bake has visual characteristics for each encoding, so if someone have certain exposure for them, they could say which encoding just looking at it.
 
