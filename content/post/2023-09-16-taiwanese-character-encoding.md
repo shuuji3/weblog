@@ -5,7 +5,7 @@ tags: ["encoding", "taiwanese", "japanese"]
 toc: true
 ---
 
-When I was checking the electricity production data in Taiwan from Taipower (台湾電力公司) website, I encountered a character encoding issue.
+When I was checking the electricity production data in Taiwan from Taipower (台湾電力公司) website for [this issue](https://github.com/electricitymaps/electricitymaps-contrib/issues/5903), I encountered a character encoding issue.
 
 <!--more-->
 
