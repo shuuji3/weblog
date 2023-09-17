@@ -179,6 +179,8 @@ li {
 nav {
     a {
         font-weight: normal;
+        padding: 0.5rem;
+        margin-left: 0;
 
         @include mobile {
             margin: 0 4px;
