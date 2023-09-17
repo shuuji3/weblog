@@ -1,11 +1,9 @@
 <!-- CSS -->
 <link rel="stylesheet" href="/css/style.min.css">
-<link rel="stylesheet" href="/css/Gilroy-ExtraBold.css">
-<link rel="stylesheet" href="/css/Gilroy-Light.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Poppins&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Poppins&family=Open+Sans&display=swap" rel="stylesheet">
 
 {{ $style := resources.Get "main.scss" | toCSS | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $style.Permalink }}" emotion="🤩">

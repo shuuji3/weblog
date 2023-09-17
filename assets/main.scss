@@ -13,7 +13,7 @@
 
 body {
     background-color: #fdedf2;
-    font-family: Poppins, sans-serif !important;
+    font-family: "Open Sans", sans-serif !important;
 
     @include mobile {
         font-size: 1rem;
@@ -21,8 +21,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: normal;
-    font-family: Gilroy-Light, sans-serif !important;
+    font-family: Poppins, sans-serif !important;
 }
 
 h2, h3, h4, h5, h6 {
@@ -82,10 +81,6 @@ a:focus, a:hover {
 ::selection {
     color: inherit;
     background: #ffc107;
-}
-
-strong {
-    font-family: Gilroy-ExtraBold, sans-serif;
 }
 
 .wrapper-footer {
