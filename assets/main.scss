@@ -160,9 +160,13 @@ li {
     margin-bottom: 0.5em;
 }
 
-@include mobile {
-    nav a {
-        margin: 0 4px;
+nav {
+    a {
+        font-weight: normal;
+
+        @include mobile {
+            margin: 0 4px;
+        }
     }
 }
 
@@ -172,6 +176,7 @@ li {
 
 .btn-primary {
     background-color: #2196f3;
+
     &.disabled, &:hover {
         background-color: #2196f3;
     }
@@ -187,6 +192,7 @@ footer {
     a {
         display: inline-block;
     }
+
     img {
         max-height: 50px;
         max-width: 200px;
