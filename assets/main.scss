@@ -222,3 +222,13 @@ footer {
 .wrapper-footer > .container {
     border-color: #e1f5fe;
 }
+
+.footnote-ref {
+    &::before {
+        content: '[';
+    }
+
+    &::after {
+        content: ']';
+    }
+}
