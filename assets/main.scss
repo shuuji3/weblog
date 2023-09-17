@@ -111,6 +111,7 @@ p a:has(> code) {
     max-width: 1000px;
     background-color: rgba(255, 255, 255, 0.75);
     margin: 1rem auto;
+    border: #feedf2 solid 4px;
     border-radius: 1rem;
 
     @include small {
@@ -119,11 +120,25 @@ p a:has(> code) {
 
     @include mobile {
         padding: 1rem;
+        border: none;
     }
 }
 
 .masthead {
     border-bottom: none;
+}
+
+.wrapper-masthead {
+    position: sticky;
+    top: 0;
+
+    @include small {
+        position: sticky;
+    }
+
+    @include mobile {
+        position: inherit;
+    }
 }
 
 article + article {
@@ -199,4 +214,9 @@ footer {
         max-width: 200px;
         margin: 0.5rem;
     }
+
+}
+
+.wrapper-footer > .container {
+    border-color: #e1f5fe;
 }
