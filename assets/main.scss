@@ -40,19 +40,21 @@ h2 {
     font-size: 22px;
 }
 
+h1::before, h2::before, h3::before {
+    font-family: "Noto Color Emoji", sans-serif;
+    margin-right: 0.5rem;
+}
+
 h1::before {
     content: "🌈";
-    margin-right: 0.5rem;
 }
 
 h2::before {
     content: "🌟";
-    margin-right: 0.5rem;
 }
 
 h3::before {
     content: "🌙";
-    margin-right: 0.5rem;
 }
 
 a {
