@@ -6,7 +6,7 @@ post:
 	idea content/post/$(shell date +%Y-%m-%d)-$$title.md
 
 serve:
-	hugo serve
+	hugo serve --bind=0.0.0.0
 
 container-serve:
 	docker run --rm --name "weblog-serve" -p 1313:1313 -v $(CURDIR):/src --workdir /src -e HUGO_WATCH=1 jojomi/hugo \
