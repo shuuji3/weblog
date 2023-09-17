@@ -7,7 +7,7 @@ toc: true
 
 In the previous article [Temporarily activate `gcloud` configurations with `CLOUDSDK_ACTIVE_CONFIG_NAME`](http://localhost:1313/post/2023-03-25-temporarily-activate-gcloud-configurations/), I explained how we can temporarily activate the gcloud configurations. In this post, I will enhance this with `fzf` for the interactive search.
 
-Note that I'm using [🐟fish shell](https://fishshell.com/).
+Note that I'm using [🐟 fish shell](https://fishshell.com/).
 
 <!--more-->
 
