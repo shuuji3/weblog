@@ -13,6 +13,10 @@ The empty Gitpod environment does not have `gcloud` command to interact with Goo
 
 It involves adding gpg key for their apt repository to invoke the initial authentication command, so it might be a bit cumbersome for those not familiar with Debian Linux environment or Google Cloud SDK (`gcloud` command) setup.
 
+## Gitpod template repository
+
+You can use this repository I created as a base repository to take a shortcut: [shuuji3/gitpod-workspace-with-gcloud](https://github.com/shuuji3/gitpod-workspace-with-gcloud)
+
 ## Installation commands
 
 The entire commands needed for installation are the following five lines: 
@@ -58,10 +62,6 @@ gcloud auth login
 ```
 
 After being authenticated and entering the authentication code, we can now use `gcloud` and can do whatever you would like to do with Google Cloud!
-  
-## Gitpod template repository
-
-You can use this repository I created as a base repository: [shuuji3/gitpod-workspace-with-gcloud](https://github.com/shuuji3/gitpod-workspace-with-gcloud)
 
 ## References
 
