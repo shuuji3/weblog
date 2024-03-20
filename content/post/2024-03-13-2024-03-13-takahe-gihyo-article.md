@@ -9,8 +9,8 @@ It was already a half year ago, but I had an opportunity to write two long artic
 
 <!--more-->
 
-1. 情報発信に便利で軽量なActivityPubサーバー「Takahē」［前編］ ～特徴（マルチドメインサポート）の紹介と、クライアントアプリElkからの利用 | gihyo.jp - https://gihyo.jp/article/2023/09/takahe-01
-2. 情報発信に便利で軽量なActivityPubサーバー「Takahē」［後編］ ～基本的なアーキテクチャと特徴的なコンポーネントの紹介と、サーバーの構築方法 | gihyo.jp - https://gihyo.jp/article/2023/09/takahe-02
+1. [情報発信に便利で軽量なActivityPubサーバー「Takahē」［前編］ ～特徴（マルチドメインサポート）の紹介と、クライアントアプリElkからの利用 | gihyo.jp](https://gihyo.jp/article/2023/09/takahe-01) (en: [Google Translation](https://gihyo-jp.translate.goog/article/2023/09/takahe-01?_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=wapp))
+2. [情報発信に便利で軽量なActivityPubサーバー「Takahē」［後編］ ～基本的なアーキテクチャと特徴的なコンポーネントの紹介と、サーバーの構築方法 | gihyo.jp](https://gihyo.jp/article/2023/09/takahe-02) (en: [Google Translation](https://gihyo-jp.translate.goog/article/2023/09/takahe-02?_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=wapp))
 
 where I introduced Takahē's features and the overview of ActivityPub/Fediverse, I also presented its interesting components and libraries as well as the server usage with Mastodon Client Elk.
 
