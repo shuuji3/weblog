@@ -3,6 +3,7 @@ title: "Writing Takahē Article for gihyo.jp"
 date: 2024-03-13T13:37:36Z
 tags: ["media", "activitypub", "fediverse", "takahe", "elk", "writing"]
 toc: true
+aliases: 2024-03-13-2024-03-13-takahe-gihyo-article # typo
 ---
 
 It was already a half year ago, but I had an opportunity to write two long articles about Takahē in Japanese on the website gihyo.jp, managed by Gijutsu-Hyoron Co., Ltd. (技術評論社), one of the famous technical book publishers in Japan:
@@ -18,4 +19,3 @@ It took much time than expected as I came up with many topics while writing and 
 
 But it was a wonderful experience as I was able to introduce little-known Takahē and its interesting architecture at that time to the Japanese
 tech community and learn/explore more about ActivityPub/Fediverse, Django, and many other communities in depth at the same time.
- 
